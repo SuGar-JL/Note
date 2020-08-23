@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<!-- 计算属性 -->
+<!-- 基于缓存：与方法不同的地方 -->
+<!-- 过程比较耗时且多次使用：计算属性 -->
+
+<body>
+    <div id="app">
+        <p>{{msg}}</p>
+        <p>{{msg.split('').reverse().join('')}}</p>
+        <!-- 调用计算属性 -->
+        <p>{{reverseMsg}}</p>
+        <!-- 验证基于缓存 -->
+        <p>{{reverseMsg}}</p>
+
+        <!-- 调用方法 -->
+        <p>{{reverseMsg1()}}</p>
+        <p>{{reverseMsg1()}}</p>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: 'hello',
+        },
+        computed: {
+            reverseMsg() {
+                console.log('使用两次计算属性，但控制台只打印一次-->缓存机制');
+                return this.msg.split('').reverse().join('')
+            }
+        },
+        methods: {
+            reverseMsg1() {
+                console.log('使用两次方法，但控制台打印两次-->无缓存机制');
+                return this.msg.split('').reverse().join('')
+            }
+        }
+    })
+</script>
+
+</html>

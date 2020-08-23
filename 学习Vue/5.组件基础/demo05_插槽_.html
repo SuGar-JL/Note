@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<!-- 使用插槽向子组件传递内容 -->
+<!-- 插槽的作用就是让组件向<p>等元素一样，可以在开始标签与结束标签之间插入内容 -->
+
+<body>
+    <div id="app">
+        <alert-box>
+            <!-- 有插槽才能出现下面这句话 -->
+            Something bad happened.
+        </alert-box>
+    </div>
+</body>
+<script>
+    Vue.component('alert-box', {
+        template: `
+            <div style="background-color: red">
+                <strong>Error!</strong>
+                <slot></slot>
+            </div>
+        `
+    })
+    var vm = new Vue({
+        el: '#app',
+        data: {
+        },
+        methods: {
+        }
+    })
+</script>
+
+</html>

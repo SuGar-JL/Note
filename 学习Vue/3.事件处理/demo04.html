@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<!-- 按键修饰符 -->
+<!-- 1.使用enter间让计数器加一 -->
+<!-- 2.使用enter键弹出输入的内容的提示框 -->
+
+<!-- 系统修饰键 -->
+<!-- 组合键 -->
+<!-- 使用按住ctrl键点击按钮让计数器加一 -->
+
+<!-- .exact 修饰符 -->
+<!-- 让组合键更加精确，即没有使用时，只要按下需要的键就可以，即使多按了其它按键也不影响，但加了.exact修饰符就不行了，不能多按 -->
+
+<!-- 鼠标按钮 -->
+
+<body>
+    <div id="app">
+        <p>计数器：{{counter}}</p>
+        <p>使用enter键间让计数器加一，要先点一下按钮。。。。。</p>
+        <button @keyup.enter="counter += 1">加一</button>
+        <p>使用按住ctrl键点击按钮让计数器加一</p>
+        <button @click.ctrl="counter += 1">加一</button>
+        <button @click.ctrl.exact="counter += 1">加一,.exact修饰</button>
+        <p>使用鼠标右键让计数器加一，行不通</p>
+        <button @click.right="counter += 1">加一,鼠标右键</button>
+        <p>使用鼠标中键让计数器加一，行不通</p>
+        <button @click.right="counter += 1">加一,鼠标中键</button>
+
+        <p>使用enter键提交表单</p>
+        <input @keyup.enter="submit" type="text" v-model="msg">
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            counter: 0,
+            msg: '',
+        },
+        methods: {
+            submit() {
+                alert(this.msg);
+            }
+        }
+    })
+</script>
+
+</html>

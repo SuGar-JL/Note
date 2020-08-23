@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <base-layout>
+        <p slot="header">标题信息</p>
+        <p>主要内容1</p>
+        <p>主要内容2</p>
+        <p slot="footer">底部信息</p>
+      </base-layout>
+
+      <base-layout>
+        <!-- template的作用只是临时性的包裹以下内容，不会渲染 -->
+        <template slot="header">
+          <p>标题信息1</p>
+          <p>标题信息2</p>
+        </template>
+        <p>主要内容1</p>
+        <p>主要内容2</p>
+        <template slot="footer">
+          <p>底部信息1</p>
+          <p>底部信息2</p>
+        </template>
+      </base-layout>
+    </div>
+    <script>
+      /* 具名插槽 */
+      Vue.component("base-layout", {
+        template: `
+          <div>
+            <header>
+                <slot name='header'></slot>
+            </header>
+            <main>
+                <slot></slot>
+            </main>
+            <footer>
+                <slot name='footer'></slot>
+            </footer>
+                `,
+      });
+      var app = new Vue({
+        el: "#app",
+        data: {},
+        methods: {},
+      });
+    </script>
+  </body>
+</html>

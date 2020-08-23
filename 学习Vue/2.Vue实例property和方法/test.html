@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p>{{a}}</p>
+        <button @click="change">changeA</button>
+    </div>
+    <script>
+        var data1 = { a: "1" }
+        var vm = new Vue({
+            el: '#app',
+            data: data1,
+            methods: {
+                change() {
+                    this.a = "222"
+                }
+            }
+        })
+
+        console.log(vm.$el === document.getElementById('app'));//true
+        console.log(vm.$data === data1);//true
+        vm.$watch('a', function (newValue, oldValue) {
+            console.log("newValue:" + newValue);//222
+            console.log("oldValue:" + oldValue);//1
+        })
+
+
+    </script>
+</body>
+
+</html>

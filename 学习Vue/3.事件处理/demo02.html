@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .once {
+            background-color: red;
+        }
+
+        .two {
+            background-color: blue;
+            margin-left: 100px;
+        }
+
+        .three {
+            background-color: green;
+            margin-left: 200px;
+        }
+    </style>
+</head>
+<!-- .stop修饰符 -->
+<!-- 阻止单击事件传播 -->
+<!-- 不使用.stop修饰符时点击三div，会触发三个div的点击事件，从内向外 -->
+
+<!-- .capture修饰符 -->
+<!-- 捕获三div的点击事件在大div处理，然后再在三div处理 -->
+
+<!-- .self修饰符 -->
+<!-- 事件只在event.target时当前元素自身时才触发事件 -->
+<!-- 将三div的.stop修饰符去掉，在二div加上.self修饰符，点击三div，不会触发二div的事件-->
+
+<body>
+    <div id="app">
+        <div @click.capture="once" class="once">
+            我是大div
+            <div @click.self="two" class="two">
+                我是二div
+                <div @click.stop="three" class="three">
+                    我是三div
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+        },
+        methods: {
+            once() {
+                alert('我是大div')
+            },
+            two() {
+                alert('我是二div')
+            },
+            three() {
+                alert('我是三div')
+            }
+        }
+    })
+</script>
+
+</html>

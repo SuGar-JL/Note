@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 使用时注意别用驼峰式 -->
+        <child-item :menu-text='text'></child-item>
+    </div>
+    <script>
+        /* props */
+        Vue.component('child-item1', {
+            //驼峰式命名
+            props: ['helloText'],
+            template: '<div>{{helloText}}</div>'
+        })
+        Vue.component('child-item', {
+            //驼峰式命名
+            props: ['menuText'],
+            data() {
+                return {
+                    msg: '子组件本身的数据'
+                }
+            },
+            //这里可以直接使用驼峰式的名字
+            template: '<div>{{msg+"----"+menuText}}<child-item1 helloText="使用驼峰式名字"></child-item1></div>'
+        })
+        var app = new Vue({
+            el: '#app',
+            data: {
+                text: '父组件动态绑定的数据'
+            },
+            methods: {
+            }
+        })
+    </script>
+</body>
+
+</html>

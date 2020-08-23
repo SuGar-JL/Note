@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<!-- props向子组件传递数据 -->
+
+<body>
+    <div id="app">
+        <!-- 传一个 -->
+        <child-item text='父组件静态数据'></child-item>
+        <!-- 传一个 -->
+        <child-item :text='text' text1='父组件静态数据1'></child-item>
+        <!-- 用数组传 -->
+        <child-item v-for="text in texts" :key="text.id" :text='text.text' text1='父组件静态数据1'></child-item>
+
+        <!-- 直接串对象 -->
+        <child-item1 v-for="user in users" :key="user.id" :user="user"></child-item1>
+    </div>
+    <script>
+        /* props */
+        Vue.component('child-item', {
+            props: ['text', 'text1'],//相当于子组件的属性
+            data() {
+                return {
+                    msg: '子组件本身的数据',
+                    msg1: this.text,//prop可以用在这
+                }
+            },
+            template: '<div>{{msg+"----"+text+"----"+text1}}</div>'
+        })
+        Vue.component('child-item1', {
+            props: ['user'],//相当于子组件的属性
+            data() {
+                return {
+                }
+            },
+            // `` 不支持IE浏览器
+            template: `
+                <div>
+                    <span>username:{{user.username}}</span>
+                    <span>password:{{user.password}}</span>
+                </div>
+            `,
+            //用\来支持IE
+            // template: '\
+            //     <div>\
+            //         <span>username:{{user.username}}</span>\
+            //         <span>password:{{user.password}}</span>\
+            //     </div>',
+
+        })
+        var app = new Vue({
+            el: '#app',
+            data: {
+                text: '父组件动态绑定的数据',
+                texts: [
+                    { id: 1, text: 'A' },
+                    { id: 2, text: 'B' },
+                    { id: 3, text: 'C' },
+                ],
+                users: [
+                    { id: 1, username: 'sugar1', password: 'sjl1', },
+                    { id: 2, username: 'sugar2', password: 'sjl2', },
+                    { id: 3, username: 'sugar3', password: 'sjl3', },
+                ],
+            },
+            methods: {
+            }
+        })
+    </script>
+</body>
+
+</html>

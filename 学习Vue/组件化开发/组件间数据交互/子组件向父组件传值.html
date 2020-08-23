@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div :style='{fontSize:fontSize + "px"}'>{{msg}}</div>
+        <!-- 用@enlarge-font="handle"监听子组件的自定义事件，用$event接收子组件传来的值 -->
+        <child-item :parr='parr' @enlarge-font="handle"></child-item>
+        <child-item :parr='parr' @enlarge-font="handle1($event)"></child-item>
+    </div>
+    <script>
+        /* 不推荐使用props来通过子组件操作父组件的数据，因为props传输的是单向数据流 */
+        Vue.component('child-item', {
+            props: ['parr'],
+            template: `
+            <div>
+                <li :key='item.index' v-for='item in parr'>{{item}}</li>
+                <!-- 不推荐这种方法 -->
+                <button @click='parr.push("lemon")'>添加</button>
+                <!-- 推荐这种方法，用$emit("enlarge-font")自定义事件 -->
+                <button @click='$emit("enlarge-font")'>增大父组件的文本的字体</button>
+                <!-- 传值 -->
+                <button @click='$emit("enlarge-font",10)'>增大父组件的文本的字体1</button>
+            </div>
+                `
+        })
+        var app = new Vue({
+            el: '#app',
+            data: {
+                msg: '把我变大！',
+                parr: ['apple', 'orange', 'banana'],
+                fontSize: 10
+            },
+            methods: {
+                handle: function () {
+                    this.fontSize += 5
+                },
+                handle1: function (val) {
+                    this.fontSize += val
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

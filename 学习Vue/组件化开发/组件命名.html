@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app-7">
+        <!-- 推荐使用”-“的命名方式 -->
+        <ol>
+            <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+        </ol>
+        <!-- 驼峰式命名时的使用方式，不能直接使用驼峰式的名字 -->
+        <hello-world></hello-world>
+    </div>
+    <script>
+        // 定义名为 todo-item 的新组件
+        //Vue 组件都是 Vue 实例
+        Vue.component('HelloWorld', {
+            data() {
+                return {
+                    msg: '驼峰式命名组件'
+                };
+            },
+            template: '<div>{{msg}}</div>',
+        })
+        Vue.component('todo-item', {
+            data() {
+                return {
+                    msg: ''
+                };
+            },
+            props: ['todo'],//通过此改变template里的内容
+            //模板必须有一个根元素（最顶层的元素）
+            // template: '<li>{{ todo.text }}</li>',
+            //模板字符串方式写模板
+            template: `
+                <div>
+                    <li>{{ todo.text }}</li>
+                    <!-- 驼峰式名字在这可以直接用 -->
+                    <HelloWorld></HelloWorld>
+                    <hello-world></hello-world>
+                </div> 
+                `,
+        })
+
+        var app7 = new Vue({
+            el: '#app-7',
+            data: {
+                groceryList: [
+                    { id: 0, text: '蔬菜' },
+                    { id: 1, text: '奶酪' },
+                    { id: 2, text: '随便其它什么人吃的东西' }
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

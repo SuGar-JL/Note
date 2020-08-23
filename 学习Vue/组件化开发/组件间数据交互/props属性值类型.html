@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h1>使用v-bind进行传值</h1>
+        <test :pstr='pstr' :pnum='pnum' :pbool='pbool' :parr='parr' :pobj='pobj'></test>
+        <h1>不使用v-bind进行传值</h1>
+        <test pstr='pstr' pnum='12' pbool='true' parr='["a","b","c"]' pobj='{id:"2",name:"sugar",age:"18"}'>
+        </test>
+    </div>
+    <script>
+        /* 父组件向子组件传递String,Numeber,Boolean,Array,Object */
+        Vue.component('test', {
+            props: ['pstr', 'pnum', 'pbool', 'parr', 'pobj'],
+            template: `
+                <div>
+                    <div>{{"父组件传来的字符串："+pstr+"----数据类型："+typeof pstr}}</div>
+                    <div>{{"父组件传来的数字："+pnum+"----数据类型："+typeof pnum}}</div>
+                    <div>{{"父组件传来的布尔值："+pbool+"----数据类型："+typeof pbool}}</div>
+                    <div>父组件传来的数组：</div>
+                    <div>{{"----数据类型："+typeof parr}}</div>
+                    <li v-for='item in parr'>{{item}}</li>
+                    <div>父组件传来的对象：</div>
+                    <div>{{"----数据类型："+typeof pobj}}</div>
+                    <div>{{"id:"+pobj.id}}</div>
+                    <div>{{"name:"+pobj.name}}</div>
+                    <div>{{"age:"+pobj.age}}</div>
+                </div>
+                `
+        });
+        var app = new Vue({
+            el: '#app',
+            data: {
+                pstr: 'string',
+                pnum: 12,
+                pbool: true,
+                parr: ['apple', 'orange', 'banana'],
+                pobj: {
+                    id: '1',
+                    name: 'sjl',
+                    age: '18'
+                }
+            },
+            methods: {
+            }
+        })
+    </script>
+</body>
+
+</html>

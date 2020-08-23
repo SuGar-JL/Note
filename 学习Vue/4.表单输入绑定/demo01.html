@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<!-- v-model -->
+<!-- 双向数据绑定 -->
+
+<body>
+    <div id="app">
+        <!-- 输入框 -->
+        <p>==========input输入框==========</p>
+        <!-- 在input时数据就更新（输入法组合文字期间不更新），边输入边更新 -->
+        <input type="text" v-model="msg" placeholder="编辑我">
+        <br>
+        <!-- .lazy修饰符 -->
+        <!-- 将input事件切换为change事件 -->
+        <!-- 在change时更新，不是在input时更新，输入后，失去焦点才更新 -->
+        <!-- 可用于用户名的验证（失去焦点时验证） -->
+        <input type="text" v-model.lazy="msg" placeholder="编辑我lazy">
+        <br>
+        <!-- .number修饰符 -->
+        <!-- 自动将用户的输入值转为数值【类型】，html元素总返回字符串类型 -->
+        <input type="number" v-model.number="msg" placeholder="编辑我number【数字】">
+        <br>
+        <!-- .trim修饰符 -->
+        <!-- 自动首尾空白字符 -->
+        <input type="text" v-model.trim="msg" placeholder="编辑我trim">
+        <br>
+        <span>输入的内容：{{msg}}</span>
+
+        <!-- 文本框 -->
+        <p>==========textarea多行文本框==========</p>
+        <textarea v-model="msg1" placeholder="输入多行文本"></textarea>
+        <br>
+        <span style="white-space: pre-line;">输入的文本：{{ msg1 }}</span>
+        <!-- 不会生效，错误写法 -->
+        <!-- <textarea name="" id="" cols="30" rows="10">{{xxxxx}}</textarea> -->
+
+        <!-- 复选框 -->
+        <!-- v-model实际是与value绑定，所以必须提供value -->
+        <p>==========复选框==========</p>
+        <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
+        <label for="jack">Jack</label>
+        <input type="checkbox" id="john" value="John" v-model="checkedNames">
+        <!-- 下面这句用于改变选中与没选中时的值，但用在单选按钮比较好 -->
+        <!-- <input type="checkbox" id="john" value="John" true-value="yes" false-value="no" v-model="checkedNames"> -->
+        <label for="john">John</label>
+        <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
+        <label for="mike">Mike</label>
+        <br>
+        <span>选择的名字: {{ checkedNames }}</span>
+
+        <p>==========单选按钮==========</p>
+        <!-- v-model实际是与value绑定，所以必须提供value -->
+        <!-- 选中这项，picked的值为One的值（v-bind） -->
+        <input type="radio" id="one" :value="One" v-model="picked">
+        <label for="one">One</label>
+        <br>
+        <input type="radio" id="two" value="Two" v-model="picked">
+        <label for="two">Two</label>
+        <br>
+        <span>选择的是: {{ picked }}</span>
+
+        <p>==========选择框==========</p>
+        <select v-model="selected">
+            <option disabled value="">请选择</option>
+            <!-- 选择这一项时，selected的值为a，而不是A -->
+            <option value="a">A</option>
+            <!-- 选中这一项，selected的值是sugar，不是B -->
+            <option v-bind:value="B">B</option>
+            <option>C</option>
+        </select>
+        <span>选择的是: {{ selected }}</span>
+
+        <p>==========可多选的选择框（鼠标拉选区域）==========</p>
+        <select v-model="selected1" multiple style="width: 50px;">
+            <option>A</option>
+            <option>B</option>
+            <option>C</option>
+        </select>
+        <br>
+        <span>选择的是: {{ selected1 }}</span>
+
+        <p>==========用 v-for 渲染的动态选项==========</p>
+        <select v-model="selected2">
+            <option v-for="option in options" v-bind:value="option.value">
+                {{ option.text }}
+            </option>
+        </select>
+        <br>
+        <span>选择的是: {{ selected2 }}</span>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '',//指定初始值
+            msg1: '',
+            checkedNames: [],
+            One: 'sugar',
+            B: 'suagr',
+            picked: '',
+            selected: '',
+            selected1: [],
+            selected2: 'A',
+            options: [
+                { text: 'One', value: 'A' },
+                { text: 'Two', value: 'B' },
+                { text: 'Three', value: 'C' },
+            ]
+        },
+        methods: {
+        }
+    })
+</script>
+
+</html>

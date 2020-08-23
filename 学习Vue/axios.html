@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+	<script src="https://cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+	<body>
+		<div id="app">
+			<label>姓名：</label>
+			<input type="text" name="likeName" v-model="likeName" />
+			<input type="button" v-on:click="findByPage(1)" value="查询"  />
+			<table border="1" cellspacing="1" cellpadding="20">
+				<tr>
+					<th>编号</th>
+					<th>姓名</th>
+					<th>性别</th>
+					<th>年级</th>
+					<th>操作</th>
+				</tr>
+				<template v-for="stu in stuList">
+					<tr>
+						<td>{{stu.id}}</td>
+						<td>{{stu.name}}</td>
+						<td>{{stu.sex}}</td>
+						<td>{{stu.gradeId}}</td>
+						<td>
+							<a href="javascript:void(0)" v-on:click="del(stu.id)">删除</a>
+							<a href="javascript:void(0)" v-on:click="edit(stu)">编辑</a>
+						</td>
+					</tr>
+				</template>
+			</table>
+			<template>
+				<table>
+					<tr>
+						<td>
+							编号:<input type="text" name="id" v-model="student.id" placeholder="编号无需自己填写" readonly="readonly" />
+						</td>
+						<td>
+							姓名:<input type="text" name="name" v-model="student.name" />
+						</td>
+						<td>
+							性别:<input type="text" name="sex" v-model="student.sex" />
+						</td>
+						<td>
+							年级:<input type="text" name="gradeId" v-model="student.gradeId" />
+						</td>
+						<td>
+							<input type="button" value="保存" v-on:click="add(student)" />
+						</td>
+					</tr>
+				</table>
+			</template>
+			<a href="javascript:void(0)" v-on:click="findByPage(1)">首页</a>
+			<a href="javascript:void(0)" v-on:click="findByPage(page.number)">上一页</a>
+			<a href="javascript:void(0)" v-on:click="findByPage(page.number+2)">下一页</a>
+			<a href="javascript:void(0)" v-on:click="findByPage(page.totalPages)">尾页</a>
+			当前第<span v-text="page.number+1"></span>页/共{{page.totalPages}}页
+		</div>
+	</body>
+		<!-- vue.js代码 -->
+		<script>
+		var app = new Vue({
+			el: "#app",
+			data: {
+				likeName:"",
+				student: {
+					id: "",
+					name: "",
+					sex: "",
+					gradeId: ""
+				},
+				stuList: [],
+				page:{}
+			},
+			methods: {
+				findByPage: function(pageNum) {
+					var _this = this;
+					var likeName=this.likeName;
+					if(pageNum!=null||pageNum!=''){
+						if(pageNum>_this.page.totalPages){
+							pageNum=_this.page.totalPages
+						}
+					}
+					axios.get('http://localhost:8080/findByPage', {
+							params: {
+								pageNum: pageNum,
+								name: likeName
+							}
+						})
+						.then(function(response) {
+							console.log(response.data)
+							_this.page=response.data;
+							_this.stuList = response.data.content;
+						})
+						.catch(function(error) { // 请求失败处理
+							console.log(error);
+						});
+				},
+				del: function(id) {
+					var _this = this;
+					console.log(id)
+					let delId = id;
+					axios.delete('http://localhost:8080/deleteStu', {
+							params: {
+								id: delId
+							}
+						})
+						.then(function(response) {
+							console.log(response.data)
+							if (response.data == 1) {
+								_this.findByPage();
+								alert("删除成功");
+							}
+						})
+						.catch(function(error) { // 请求失败处理
+							console.log(error);
+						});
+				},
+				add: function(student) {
+					var _this = this;
+					console.log(student.id);
+					if (student.id != null&&student.id !='') {
+						var stu = JSON.stringify(student);
+						axios.put('http://localhost:8080/updateStu',stu, {
+								headers: {
+									'Content-Type':'application/json;charset=utf-8'
+								}
+							})
+							.then(function(response) {
+								alert("修改成功")
+								_this.findByPage();
+								_this.student.id=null;
+								_this.student.name=null;
+								_this.student.sex=null;
+								_this.student.gradeId=null;
+							})
+							.catch(function(error) { // 请求失败处理
+								console.log(error);
+							});
+
+					} else {
+						axios.post('http://localhost:8080/addStu',student, {
+								headers: {
+									'Content-Type':'application/json;charset=utf-8'
+								}
+							})
+							.then(function(response) {
+								alert("新增成功")
+								_this.findByPage();
+								_this.student.name=null;
+								_this.student.sex=null;
+								_this.student.gradeId=null;
+							})
+							.catch(function(error) { // 请求失败处理
+								console.log(error);
+							});
+					}
+				},
+				edit: function(student) {
+					this.student = student;
+				}
+			},
+			// 钩子 在Vue创建时就运行
+			created: function() {
+				this.findByPage();
+			}
+		})
+	</script>
+</html>

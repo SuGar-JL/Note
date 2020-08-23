@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<!-- 在组件上使用v-model -->
+<!-- 将子组件的值与父组件的data中的变量绑定绑定 -->
+
+<!-- 一个组件上的 v-model 默认会利用名为 value 的 prop 和名为 input 的事件，但是像单选框、复选框等类型的输入控件可能会将 value attribute 用于不同的目的。model 选项可以用来避免这样的冲突： -->
+<!-- 将原生事件绑定到组件 -->
+
+<body>
+    <div id="app">
+        <!-- 在组件的根元素上直接监听原生事件 -->
+        <child v-model='text' @focus.native="onFocus"></child>
+        <!-- 等价于， input是一个自定义事件 -->
+        <child :value='text' @input="text=$event"></child>
+        <!-- 再等价于 -->
+        <child :value='text' @input="onText"></child>
+
+        <p>输入的内容：{{text}}</p>
+
+        <!-- 选择框组件 -->
+        <!-- 使用v-model时，用input事件 -->
+        <child-select :value="selected" @input="selected=$event"></child-select>
+        <child-select v-model="selected"></child-select>
+        <br>
+        <span>选择的是：{{selected}}</span>
+        <br>
+        <!-- 复选框 -->
+        <base-checkbox v-model="checked"></base-checkbox>
+        <br>
+        <span>是否选中：{{checked}}</span>
+        <br>
+    </div>
+</body>
+<script>
+    Vue.component('child', {
+        data() {
+            return {
+
+            }
+        },
+        props: ['value'],
+        template: `
+            <input 
+                :value="value" 
+                @input="$emit('input', $event.target.value)">
+            `
+    })
+    Vue.component('child-select', {
+        data() {
+            return {
+                cityList: [
+                    {
+                        value: 'New York',
+                        label: 'New York'
+                    },
+                    {
+                        value: 'London',
+                        label: 'London'
+                    },
+                    {
+                        value: 'Sydney',
+                        label: 'Sydney'
+                    },
+                    {
+                        value: 'Ottawa',
+                        label: 'Ottawa'
+                    },
+                    {
+                        value: 'Paris',
+                        label: 'Paris'
+                    },
+                    {
+                        value: 'Canberra',
+                        label: 'Canberra'
+                    }
+                ],
+            }
+        },
+        props: ['value'],
+        template: `
+            <select :value='value' @change="$emit('input', $event.target.value)">
+                <option disabled value="">请选择</option>
+                <option v-for="city in cityList" :key="city.value" :value="city.value">{{city.label}}</option>
+            </select>
+        `
+    })
+
+    Vue.component('base-checkbox', {
+        model: {
+            prop: 'checked',//指定用checked作为prop
+            event: 'change'//指定用change方法
+        },
+        props: {
+            checked: Boolean
+        },
+        template: `
+            <input
+                type="checkbox"
+                v-bind:checked="checked"
+                v-on:change="$emit('change', $event.target.checked)"
+            >
+        `
+    })
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            text: '',
+            selected: '',
+            checked: '',
+        },
+        methods: {
+            onText(text) {
+                this.text = text;
+            },
+            onFocus() {
+                this.text = '输入框获得焦点'
+            }
+        }
+    })
+</script>
+
+</html>

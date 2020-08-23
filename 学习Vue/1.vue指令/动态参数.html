@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 如果atrributename中有大写字母，在data中，要写全小写的对应的变量名 -->
+        <a v-bind:[atrributename]="url">去百度</a>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                atrributename: "href",
+                url: "www.baidu.com",
+            },
+            methods: {
+            }
+        })
+    </script>
+</body>
+
+</html>

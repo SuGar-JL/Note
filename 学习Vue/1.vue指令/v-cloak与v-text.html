@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* []为属性选择器 */
+        [v-cloak]{ 
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <!-- v-cloak用于解决浏览器加载渲染DOM元素是的闪烁问题，尤其在网速慢时 -->
+        <p>{{msg}}</p>
+        <p v-cloak>{{msg}}</p>
+        <!-- 使用v-text默认没有闪烁问题 -->
+        <p v-text="msg"></p>
+        <!-- "这使用了v-cloak"，这句话不会被msg覆盖 -->
+        <p v-cloak>这使用了v-cloak{{msg}}</p>
+        <!-- “这使用了v-text”，这句话会被msg覆盖 -->
+        <p v-text="msg">这使用了v-text</p>
+    </div>
+    <!-- 把vue的引入放在着这才容易看出来闪烁 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+                msg:'sujinling'
+            }
+        })
+    </script>
+</body>
+</html>

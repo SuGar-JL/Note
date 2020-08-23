@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <span>==========组件复用，其中的count时独立的==========</span>
+        <br>
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+        <button-counter></button-counter>
+        <br>
+        <span>==========局部组件==========</span>
+        <component-a></component-a>
+        <component-b></component-b>
+        <span>==========局部组件不能嵌套使用==========</span>
+        <br>
+        <span>==========b组件的内容不会出现==========</span>
+        <br>
+        <component-a>
+            <component-b></component-b>
+        </component-a>
+        <span>==========局部组件间相互使用==========</span>
+        <br>
+        <component-c></component-c>
+    </div>
+</body>
+<script>
+    // 组件注册要放在Vue实例化之前
+    // 全局注册
+    Vue.component('button-counter', {
+        // data必须是一个函数
+        data() {
+            return {
+                count: 0,
+            }
+        },
+        template: '<button @click="count++">点击{{count}}次</button>'
+    })
+
+    // 局部注册
+    var componentA = {
+        data() {
+            return {
+
+            }
+        },
+        template: `<p>局部注册的组件A</p>`
+    }
+    var componentB = {
+        data() {
+            return {
+
+            }
+        },
+        template: `<p>局部注册的组件B</p>`
+    }
+    //要嵌套使用局部组件，得这样定义（或者用单组件文件导入import）
+    var componentC = {
+        data() {
+            return {
+
+            }
+        },
+        components: {
+            'component-b': componentB,
+        },
+        // 字符串模板``
+        template: `
+            <div>
+                <p>局部注册的组件C</p>
+                <component-b></component-b>    
+            </div>`
+    }
+    var vm = new Vue({
+        el: '#app',
+        components: {
+            'component-a': componentA,
+            'component-b': componentB,
+            'component-c': componentC,
+        },
+        data: {
+        },
+        methods: {
+        }
+    })
+</script>
+
+</html>

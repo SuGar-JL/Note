@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Vue 测试实例 - 菜鸟教程(runoob.com)</title>
+    <script src="./js/vue.js"></script>
+  </head>
+  <style>
+    .root {
+      background-color: blue;
+    }
+    .second {
+      background-color: orange;
+    }
+    .third {
+      background-color: red;
+    }
+  </style>
+  <body>
+    <div id="app" class="root">
+      <div>{{root}}</div>
+      <second-com></second-com>
+      <second-com></second-com>
+    </div>
+
+    <script>
+      /*
+      Vue调试工具安装与基本使用
+      */
+      Vue.component("second-com", {
+        data: function () {
+          return {
+            second: "二级组件",
+          };
+        },
+        template: `<div class='second'>
+                  <div>{{second}}</div>
+                  <third-com></third-com>
+                  <third-com></third-com>
+                  <third-com></third-com>
+                  </div>`,
+      });
+      Vue.component("third-com", {
+        data: function () {
+          return {
+            third: "三级组件",
+          };
+        },
+        template: '<div class="third"><div>{{third}}</div></div>',
+      });
+      new Vue({
+        el: "#app",
+        data: {
+          root: "顶层组件",
+        },
+      });
+    </script>
+  </body>
+</html>

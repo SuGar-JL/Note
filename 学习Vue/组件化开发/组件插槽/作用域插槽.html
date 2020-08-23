@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .current {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <fruit-list :list="list">
+            <template slot-scope="slotProps">
+                <strong v-if="slotProps.info.id==2" class="current">{{slotProps.info.name}}</strong>
+                <sapn v-else>{{slotProps.info.name}}</sapn>
+            </template>
+        </fruit-list>
+    </div>
+    <script>
+        /* 作用域插槽 */
+        Vue.component("fruit-list", {
+            props: ["list"],
+            template: `
+          <div>
+            <li :key='item.id' v-for='item in list'>
+                <slot :info='item'>{{item.name}}</slot>    
+            </li>
+          </div>
+        `,
+        });
+        var app = new Vue({
+            el: "#app",
+            data: {
+                list: [
+                    {
+                        id: 1,
+                        name: "apple",
+                    },
+                    {
+                        id: 2,
+                        name: "orang",
+                    },
+                    {
+                        id: 3,
+                        name: "banana",
+                    },
+                ],
+            },
+            methods: {},
+        });
+    </script>
+</body>
+
+</html>

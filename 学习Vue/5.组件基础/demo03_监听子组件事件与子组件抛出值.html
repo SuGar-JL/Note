@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<!-- 监听子组件事件 -->
+<!-- $emit+自定义事件 -->
+
+<!-- 子组件使用事件抛出值 -->
+<!-- $emit(父组件自定义事件名称，要传给父组件的值) -->
+<!-- 1.用$event接收 -->
+<!-- 2.用方法接收 -->
+
+
+
+<body>
+    <div id="app" :style="{fontSize: fontSize + 'em'}">
+        <!-- $event接收值 -->
+        <child v-for="user in users" :key="user.id" :user="user" @enlarge-text="fontSize += $event"></child>
+        <!-- 方法处理 -->
+        <child v-for="user in users" :key="user.id" :user="user" @enlarge-text="onEnlargeText"></child>
+    </div>
+</body>
+<script>
+    Vue.component('child', {
+        props: ['user'],
+        data() {
+            return {
+
+            }
+        },
+        template: `
+            <div>
+                <button v-on:click="$emit('enlarge-text', 0.1)">
+                    增大字体
+                </button>
+                <span>username: {{user.username}}</span>
+                <span>password: {{user.password}}</span>
+            </div>`,
+    })
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            fontSize: 1,
+            users: [
+                { id: 1, username: 'sugar1', password: 'sjl1' },
+                { id: 2, username: 'sugar2', password: 'sjl2' },
+                { id: 3, username: 'sugar3', password: 'sjl3' },
+            ],
+        },
+        methods: {
+            onEnlargeText(enlargeAmount) {
+                this.fontSize += enlargeAmount;
+            }
+        }
+    })
+</script>
+
+</html>

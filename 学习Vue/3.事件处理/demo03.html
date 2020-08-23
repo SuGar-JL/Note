@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<!-- .prevent修饰符 -->
+<!-- 阻止事件默认行为 -->
+
+<!-- .once修饰符 -->
+<!-- 事件只触发一次 -->
+
+<body>
+    <div id="app">
+        <div>
+            <!-- 加了.prevent修饰符后，不会跳转到百度页面了 -->
+            <a href="http://www.baidu.com" @click.prevent>前往百度</a>
+        </div>
+
+        <div>
+            <button @click.once="counter += 1">加一</button>
+            <p>计数器：{{counter}}</p>
+            <p>计数器被点击很多次，但加一只成功一次，因为.once修饰符</p>
+        </div>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            counter: 0,
+        },
+        methods: {
+        }
+    })
+</script>
+
+</html>

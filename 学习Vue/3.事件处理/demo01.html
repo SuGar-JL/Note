@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<!-- 用方法处理事件 -->
+
+<body>
+    <div id="app">
+        <button @click="method1">方法处理事件</button>
+        <button @click="method2('sjl')">内联处理器方法</button>
+        <button @click="method4('访问原始DOM事件', $event)">访问原始DOM事件</button>
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            name: 'sugar',
+        },
+        methods: {
+            method1() {
+                alert('Hello ' + this.name + ' !')
+            },
+            method2(name) {
+                alert('Hello ' + name + ' !')
+            },
+            method3() {
+                alert('使用JavaScript直接调用方法')
+            },
+            method4(msg, event) {
+                if (event) {
+                    event.preventDefault();//阻止默认行为
+                }
+                alert(msg);
+            },
+        }
+    })
+    vm.method3()
+</script>
+
+</html>

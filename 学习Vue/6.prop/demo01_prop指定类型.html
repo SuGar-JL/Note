@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model="username" placeholder="请输入用户名">
+        <br>
+        <!-- 密码，在没有加.number修饰时，html返回的都是字符串（即使type="number"），.number可以将输入的内容转为Number类型 -->
+        <input type="number" v-model.number="password" placeholder="请输入密码">
+        <component-a :username="username" :password="password"></component-a>
+    </div>
+</body>
+<script>
+    Vue.component('component-a', {
+        props: {
+            username: String,
+            password: Number,
+        },
+        template: `
+            <div>
+                <span>用户名：{{username}}</span>
+                <br>
+                <span>密码：{{password}}</span>
+            </div>`
+    })
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            username: '',
+            password: '',
+        },
+        methods: {
+        }
+    })
+</script>
+
+</html>
