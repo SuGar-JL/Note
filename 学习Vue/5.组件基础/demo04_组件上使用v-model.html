@@ -86,7 +86,7 @@
         },
         props: ['value'],
         template: `
-            <select :value='value' @change="$emit('input', $event.target.value)">
+            <select :value='value' @input="$emit('input', $event.target.value)">
                 <option disabled value="">请选择</option>
                 <option v-for="city in cityList" :key="city.value" :value="city.value">{{city.label}}</option>
             </select>
