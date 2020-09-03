@@ -1,0 +1,13 @@
+D:\SUGAR\笔记\C#\数组之Array类\bin\Debug\netcoreapp3.1\数组之Array类.exe
+D:\SUGAR\笔记\C#\数组之Array类\bin\Debug\netcoreapp3.1\数组之Array类.deps.json
+D:\SUGAR\笔记\C#\数组之Array类\bin\Debug\netcoreapp3.1\数组之Array类.runtimeconfig.json
+D:\SUGAR\笔记\C#\数组之Array类\bin\Debug\netcoreapp3.1\数组之Array类.runtimeconfig.dev.json
+D:\SUGAR\笔记\C#\数组之Array类\bin\Debug\netcoreapp3.1\数组之Array类.dll
+D:\SUGAR\笔记\C#\数组之Array类\bin\Debug\netcoreapp3.1\数组之Array类.pdb
+D:\SUGAR\笔记\C#\数组之Array类\obj\Debug\netcoreapp3.1\数组之Array类.csprojAssemblyReference.cache
+D:\SUGAR\笔记\C#\数组之Array类\obj\Debug\netcoreapp3.1\数组之Array类.AssemblyInfoInputs.cache
+D:\SUGAR\笔记\C#\数组之Array类\obj\Debug\netcoreapp3.1\数组之Array类.AssemblyInfo.cs
+D:\SUGAR\笔记\C#\数组之Array类\obj\Debug\netcoreapp3.1\数组之Array类.csproj.CoreCompileInputs.cache
+D:\SUGAR\笔记\C#\数组之Array类\obj\Debug\netcoreapp3.1\数组之Array类.dll
+D:\SUGAR\笔记\C#\数组之Array类\obj\Debug\netcoreapp3.1\数组之Array类.pdb
+D:\SUGAR\笔记\C#\数组之Array类\obj\Debug\netcoreapp3.1\数组之Array类.genruntimeconfig.cache

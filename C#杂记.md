@@ -123,7 +123,67 @@ namespace DataTypeApplication
 }
 ```
 
+## 8.C# 的访问权限修饰符
 
+类的默认访问标识符是 **internal**，成员的默认访问标识符是 **private**。
+
+这里只说与java不同的：
+
+### Internal修饰符：
+
+Internal 访问说明符允许一个类将其成员变量和成员函数暴露给当前程序中的其他函数和对象。换句话说，带有 internal 访问修饰符的任何成员可以被定义在该成员所定义的应用程序内的任何类或方法访问。
+
+```C#
+using System;
+
+namespace RectangleApplication
+{
+    class Rectangle
+    {
+        //成员变量
+        internal double length;
+        internal double width;
+        
+        double GetArea()
+        {
+            return length * width;
+        }
+       public void Display()
+        {
+            Console.WriteLine("长度： {0}", length);
+            Console.WriteLine("宽度： {0}", width);
+            Console.WriteLine("面积： {0}", GetArea());
+        }
+    }//end class Rectangle    
+    class ExecuteRectangle
+    {
+        static void Main(string[] args)
+        {
+            Rectangle r = new Rectangle();
+            r.length = 4.5;
+            r.width = 3.5;
+            r.Display();
+            Console.ReadLine();
+        }
+    }
+}
+```
+
+### Protected Internal 访问修饰符
+
+Protected Internal 访问修饰符允许一个类将其成员变量和成员函数对同一应用程序内的子类以外的其他的类对象和函数进行隐藏。这也被用于实现继承。\
+
+### 范围比较
+
+-  (1) Pubilc ：任何公有成员可以被外部的类访问。
+-  (2) Private ：只有同一个类中的函数可以访问它的私有成员。
+-  (3) Protected ：该类内部和继承类中可以访问。
+-  (4) internal : 同一个程序集的对象可以访问。
+-  (5) Protected internal ：3 和 4 的并集，符合任意一条都可以访问。
+
+```C#
+private < internal/protected < protected internal < public
+```
 
 # 学习C#
 
@@ -634,7 +694,7 @@ int[] score = marks;
 
 | 序号 | 方法 & 描述                                                  |
 | :--- | :----------------------------------------------------------- |
-| 1    | **Clear** 根据元素的类型，设置数组中某个范围的元素为零、为 false 或者为 null。 |
+| 1    | **Clear(Array, Index, Lenght)** 根据元素的类型，设置数组中某个范围的元素为零、为 false 或者为 null。 |
 | 2    | **Copy(Array, Array, Int32)** 从数组的第一个元素开始复制某个范围的元素到另一个数组的第一个元素位置。长度由一个 32 位整数指定。 |
 | 3    | **CopyTo(Array, Int32)** 从当前的一维数组中复制所有的元素到一个指定的一维数组的指定索引位置。索引由一个 32 位整数指定。 |
 | 4    | **GetLength** 获取一个 32 位整数，该值表示指定维度的数组中的元素总数。 |
@@ -649,7 +709,7 @@ int[] score = marks;
 | 13   | **Sort(Array)** 使用数组的每个元素的 IComparable 实现来排序整个一维数组中的元素。 |
 | 14   | **ToString** 返回一个表示当前对象的字符串。从对象（Object）继承。 |
 
-## 集合：
+## 六、集合：
 
 所有集合类或与集合相关的接口命名空间都是 System.Collection，在该命名空间中提供的常用接口如下表所示。
 
@@ -775,7 +835,208 @@ Hashtable 类中常用的属性和方法如下表所示。
 
 SortedList 集合中所使用的属性和方法与上一节《[C# Hashtable](http://c.biancheng.net/view/2897.html)》中介绍的 Hashtable 比较类似，这里不再赘述。
 
-## Dictionary用法：
+## 七、结构(Struct)：
+
+### 定义结构
+
+```C#
+using System;
+     
+struct Books
+{
+   public string title;
+   public string author;
+   public string subject;
+   public int book_id;
+};  
+
+public class testStructure
+{
+   public static void Main(string[] args)
+   {
+
+      Books Book1;        /* 声明 Book1，类型为 Book */
+      Books Book2;        /* 声明 Book2，类型为 Book */
+
+      /* book 1 详述 */
+      Book1.title = "C Programming";
+      Book1.author = "Nuha Ali"; 
+      Book1.subject = "C Programming Tutorial";
+      Book1.book_id = 6495407;
+
+      /* book 2 详述 */
+      Book2.title = "Telecom Billing";
+      Book2.author = "Zara Ali";
+      Book2.subject =  "Telecom Billing Tutorial";
+      Book2.book_id = 6495700;
+
+      /* 打印 Book1 信息 */
+      Console.WriteLine( "Book 1 title : {0}", Book1.title);
+      Console.WriteLine("Book 1 author : {0}", Book1.author);
+      Console.WriteLine("Book 1 subject : {0}", Book1.subject);
+      Console.WriteLine("Book 1 book_id :{0}", Book1.book_id);
+
+      /* 打印 Book2 信息 */
+      Console.WriteLine("Book 2 title : {0}", Book2.title);
+      Console.WriteLine("Book 2 author : {0}", Book2.author);
+      Console.WriteLine("Book 2 subject : {0}", Book2.subject);
+      Console.WriteLine("Book 2 book_id : {0}", Book2.book_id);       
+
+      Console.ReadKey();
+
+   }
+}
+
+
+当上面的代码被编译和执行时，它会产生下列结果：
+
+Book 1 title : C Programming
+Book 1 author : Nuha Ali
+Book 1 subject : C Programming Tutorial
+Book 1 book_id : 6495407
+Book 2 title : Telecom Billing
+Book 2 author : Zara Ali
+Book 2 subject : Telecom Billing Tutorial
+Book 2 book_id : 6495700
+```
+
+### C# 结构的特点
+
+您已经用了一个简单的名为 Books 的结构。在 C# 中的结构与传统的 C 或 C++ 中的结构不同。C# 中的结构有以下特点：
+
+- 结构可带有方法、字段、索引、属性、运算符方法和事件。
+- 结构可定义构造函数，但**不能定义析构函数**。但是，您**不能为结构定义默认的构造函数**。默认的构造函数是自动定义的，且不能被改变。
+- 与类不同，结构**不能继承**其他的结构或类。
+- 结构**不能作为**其他结构或类的**基础结构**。
+- 结构**可实现一个或多个接口**。
+- 结构**成员**不能指定为 abstract、virtual 或 protected。
+- 当您使用 **New** 操作符创建一个结构对象时，会调用适当的构造函数来创建结构。与类不同，**结构可以不使用 New** 操作符即可被实例化。
+- 如果不使用 New 操作符，只有在所有的字段都被初始化之后，字段才被赋值，对象才被使用。
+
+### 类 vs 结构
+
+类和结构有以下几个基本的不同点：
+
+- 类是引用类型，结构是**值类型**。
+- 结构不支持继承。
+- 结构不能声明默认的构造函数。
+
+针对上述讨论，让我们重写前面的实例：
+
+```C#
+using System;
+     
+struct Books
+{
+    //属性
+   private string title;
+   private string author;
+   private string subject;
+   private int book_id;
+    //方法
+   public void getValues(string t, string a, string s, int id)
+   {
+      title = t;
+      author = a;
+      subject = s;
+      book_id = id;
+   }
+   public void display()
+   {
+      Console.WriteLine("Title : {0}", title);
+      Console.WriteLine("Author : {0}", author);
+      Console.WriteLine("Subject : {0}", subject);
+      Console.WriteLine("Book_id :{0}", book_id);
+   }
+
+};  
+
+public class testStructure
+{
+   public static void Main(string[] args)
+   {
+
+      Books Book1 = new Books(); /* 声明 Book1，类型为 Book */
+      Books Book2 = new Books(); /* 声明 Book2，类型为 Book */
+
+      /* book 1 详述 */
+      Book1.getValues("C Programming",
+      "Nuha Ali", "C Programming Tutorial",6495407);
+
+      /* book 2 详述 */
+      Book2.getValues("Telecom Billing",
+      "Zara Ali", "Telecom Billing Tutorial", 6495700);
+
+      /* 打印 Book1 信息 */
+      Book1.display();
+
+      /* 打印 Book2 信息 */
+      Book2.display(); 
+
+      Console.ReadKey();
+
+   }
+}
+
+
+当上面的代码被编译和执行时，它会产生下列结果：
+
+Title : C Programming
+Author : Nuha Ali
+Subject : C Programming Tutorial
+Book_id : 6495407
+Title : Telecom Billing
+Author : Zara Ali
+Subject : Telecom Billing Tutorial
+Book_id : 6495700
+```
+
+## 八、枚举（Enum）声明与使用：
+
+枚举是**值数据类型**。换句话说，枚举包含自己的值，且不能继承或传递继承。
+
+声明：
+
+```C#
+enum <enum_name>
+{ 
+    enumeration list 
+};
+```
+
+其中，
+
+- *enum_name* 指定枚举的类型名称。
+- *enumeration list* 是一个用逗号分隔的标识符列表。
+
+枚举列表中的每个符号代表一个整数值，一个比它前面的符号大的整数值。默认情况下，第一个枚举符号的值是 0.例如：
+
+```C#
+enum Days { Sun, Mon, tue, Wed, thu, Fri, Sat };
+
+//实例
+using System;
+namespace EnumApplication
+{
+   class EnumProgram
+   {
+      enum Days { Sun, Mon, tue, Wed, thu, Fri, Sat };
+
+      static void Main(string[] args)
+      {
+         int WeekdayStart = (int)Days.Mon;
+         int WeekdayEnd = (int)Days.Fri;
+         Console.WriteLine("Monday: {0}", WeekdayStart);//Monday: 1
+         Console.WriteLine("Friday: {0}", WeekdayEnd);//Friday: 5
+         Console.ReadKey();
+      }
+   }
+}
+```
+
+
+
+## 九、Dictionary用法：
 
 1、创建及初始化
 
@@ -861,3 +1122,85 @@ else
 | Remove        | 从 Dictionary中移除所指定的键的值                  |
 | ToString      | 返回表示当前 Object的 String （从 Object 继承）    |
 | TryGetValue   | 获取与指定的键相关联的值                           |
+
+## 十、类
+
+1. 类的默认访问标识符是 **internal**，成员的默认访问标识符是 **private**。
+
+2. 成员变量是对象的属性（从设计角度），且它们**保持私有**来实现**封装**
+
+3. 析构函数：
+
+   当类的对象超出范围时执行，调用对象结束执行。
+
+   无返回值，无参数。
+
+   析构函数用于在结束程序（比如关闭文件、释放内存等）之前释放资源。析构函数不能继承或重载
+
+   ```C#
+   using System;
+   namespace LineApplication
+   {
+      class Line
+      {
+         private double length;   // 线条的长度
+         public Line()  // 构造函数
+         {
+            Console.WriteLine("对象已创建");
+         }
+         ~Line() //析构函数
+         {
+            Console.WriteLine("对象已删除");
+         }
+   
+         public void setLength( double len )
+         {
+            length = len;
+         }
+         public double getLength()
+         {
+            return length;
+         }
+   
+         static void Main(string[] args)
+         {
+            Line line = new Line();
+            // 设置线条长度
+            line.setLength(6.0);
+            Console.WriteLine("线条的长度： {0}", line.getLength());           
+         }
+      }
+   }
+   
+   //输出：
+   对象已创建
+   线条的长度： 6
+   对象已删除
+   ```
+
+   
+
+4. 静态成员：static
+
+   无论创建多少个类的对象，只会有一个该静态成员的副本，可用于记住创建了多少个类对象
+
+   静态成员（属性和方法）属于类，无论哪个对象对其修改，都是改的同一个，使用时要注意
+
+5. 
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
+   
+
