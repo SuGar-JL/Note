@@ -1,0 +1,13 @@
+D:\SUGAR\笔记\C#\demo05_读写文件\bin\Debug\netcoreapp3.1\demo05_读写文件.exe
+D:\SUGAR\笔记\C#\demo05_读写文件\bin\Debug\netcoreapp3.1\demo05_读写文件.deps.json
+D:\SUGAR\笔记\C#\demo05_读写文件\bin\Debug\netcoreapp3.1\demo05_读写文件.runtimeconfig.json
+D:\SUGAR\笔记\C#\demo05_读写文件\bin\Debug\netcoreapp3.1\demo05_读写文件.runtimeconfig.dev.json
+D:\SUGAR\笔记\C#\demo05_读写文件\bin\Debug\netcoreapp3.1\demo05_读写文件.dll
+D:\SUGAR\笔记\C#\demo05_读写文件\bin\Debug\netcoreapp3.1\demo05_读写文件.pdb
+D:\SUGAR\笔记\C#\demo05_读写文件\obj\Debug\netcoreapp3.1\demo05_读写文件.AssemblyInfoInputs.cache
+D:\SUGAR\笔记\C#\demo05_读写文件\obj\Debug\netcoreapp3.1\demo05_读写文件.AssemblyInfo.cs
+D:\SUGAR\笔记\C#\demo05_读写文件\obj\Debug\netcoreapp3.1\demo05_读写文件.csproj.CoreCompileInputs.cache
+D:\SUGAR\笔记\C#\demo05_读写文件\obj\Debug\netcoreapp3.1\demo05_读写文件.dll
+D:\SUGAR\笔记\C#\demo05_读写文件\obj\Debug\netcoreapp3.1\demo05_读写文件.pdb
+D:\SUGAR\笔记\C#\demo05_读写文件\obj\Debug\netcoreapp3.1\demo05_读写文件.genruntimeconfig.cache
+D:\SUGAR\笔记\C#\demo05_读写文件\obj\Debug\netcoreapp3.1\demo05_读写文件.csprojAssemblyReference.cache

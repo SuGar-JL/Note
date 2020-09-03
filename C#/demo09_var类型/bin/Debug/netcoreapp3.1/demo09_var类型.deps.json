@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "demo09_var类型/1.0.0": {
+        "runtime": {
+          "demo09_var类型.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "demo09_var类型/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

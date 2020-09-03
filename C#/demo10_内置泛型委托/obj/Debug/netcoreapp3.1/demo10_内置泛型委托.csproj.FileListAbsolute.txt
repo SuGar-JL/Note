@@ -1,0 +1,13 @@
+D:\SUGAR\笔记\C#\demo10_内置泛型委托\bin\Debug\netcoreapp3.1\demo10_内置泛型委托.exe
+D:\SUGAR\笔记\C#\demo10_内置泛型委托\bin\Debug\netcoreapp3.1\demo10_内置泛型委托.deps.json
+D:\SUGAR\笔记\C#\demo10_内置泛型委托\bin\Debug\netcoreapp3.1\demo10_内置泛型委托.runtimeconfig.json
+D:\SUGAR\笔记\C#\demo10_内置泛型委托\bin\Debug\netcoreapp3.1\demo10_内置泛型委托.runtimeconfig.dev.json
+D:\SUGAR\笔记\C#\demo10_内置泛型委托\bin\Debug\netcoreapp3.1\demo10_内置泛型委托.dll
+D:\SUGAR\笔记\C#\demo10_内置泛型委托\bin\Debug\netcoreapp3.1\demo10_内置泛型委托.pdb
+D:\SUGAR\笔记\C#\demo10_内置泛型委托\obj\Debug\netcoreapp3.1\demo10_内置泛型委托.AssemblyInfoInputs.cache
+D:\SUGAR\笔记\C#\demo10_内置泛型委托\obj\Debug\netcoreapp3.1\demo10_内置泛型委托.AssemblyInfo.cs
+D:\SUGAR\笔记\C#\demo10_内置泛型委托\obj\Debug\netcoreapp3.1\demo10_内置泛型委托.csproj.CoreCompileInputs.cache
+D:\SUGAR\笔记\C#\demo10_内置泛型委托\obj\Debug\netcoreapp3.1\demo10_内置泛型委托.dll
+D:\SUGAR\笔记\C#\demo10_内置泛型委托\obj\Debug\netcoreapp3.1\demo10_内置泛型委托.pdb
+D:\SUGAR\笔记\C#\demo10_内置泛型委托\obj\Debug\netcoreapp3.1\demo10_内置泛型委托.genruntimeconfig.cache
+D:\SUGAR\笔记\C#\demo10_内置泛型委托\obj\Debug\netcoreapp3.1\demo10_内置泛型委托.csprojAssemblyReference.cache

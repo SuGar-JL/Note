@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>demo11_简单的订阅_发布模式_面向接口编程</RootNamespace>
+  </PropertyGroup>
+
+</Project>

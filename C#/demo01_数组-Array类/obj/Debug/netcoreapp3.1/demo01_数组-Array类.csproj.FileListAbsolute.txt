@@ -1,0 +1,12 @@
+D:\SUGAR\笔记\C#\demo01_数组-Array类\bin\Debug\netcoreapp3.1\demo01_数组-Array类.exe
+D:\SUGAR\笔记\C#\demo01_数组-Array类\bin\Debug\netcoreapp3.1\demo01_数组-Array类.deps.json
+D:\SUGAR\笔记\C#\demo01_数组-Array类\bin\Debug\netcoreapp3.1\demo01_数组-Array类.runtimeconfig.json
+D:\SUGAR\笔记\C#\demo01_数组-Array类\bin\Debug\netcoreapp3.1\demo01_数组-Array类.runtimeconfig.dev.json
+D:\SUGAR\笔记\C#\demo01_数组-Array类\bin\Debug\netcoreapp3.1\demo01_数组-Array类.dll
+D:\SUGAR\笔记\C#\demo01_数组-Array类\bin\Debug\netcoreapp3.1\demo01_数组-Array类.pdb
+D:\SUGAR\笔记\C#\demo01_数组-Array类\obj\Debug\netcoreapp3.1\demo01_数组-Array类.AssemblyInfoInputs.cache
+D:\SUGAR\笔记\C#\demo01_数组-Array类\obj\Debug\netcoreapp3.1\demo01_数组-Array类.AssemblyInfo.cs
+D:\SUGAR\笔记\C#\demo01_数组-Array类\obj\Debug\netcoreapp3.1\demo01_数组-Array类.csproj.CoreCompileInputs.cache
+D:\SUGAR\笔记\C#\demo01_数组-Array类\obj\Debug\netcoreapp3.1\demo01_数组-Array类.dll
+D:\SUGAR\笔记\C#\demo01_数组-Array类\obj\Debug\netcoreapp3.1\demo01_数组-Array类.pdb
+D:\SUGAR\笔记\C#\demo01_数组-Array类\obj\Debug\netcoreapp3.1\demo01_数组-Array类.genruntimeconfig.cache

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "demo11_简单的订阅-发布模式-面向接口编程/1.0.0": {
+        "runtime": {
+          "demo11_简单的订阅-发布模式-面向接口编程.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "demo11_简单的订阅-发布模式-面向接口编程/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

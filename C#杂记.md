@@ -1,4 +1,4 @@
-# C#杂记
+﻿# C#杂记
 
 ## 1.UUID生成id：
 
@@ -12,7 +12,7 @@ string id = System.Guid.NewGuid().ToString("N");
 
 https://www.cnblogs.com/rwh871212/p/6999704.html
 
-```C#
+```csharp
 DateTime t1 = new DateTime(100);   
 DateTime t2 = new DateTime(20);   
     
@@ -23,7 +23,7 @@ if (DateTime.Compare(t1, t2) < 0) Console.WriteLine("t1 < t2");
 
 ## 3.字符串转时间：
 
-```C#
+```csharp
 string st1="12:13";
 string st2="14:14";
 DateTime dt1=Convert.ToDateTime(st1);
@@ -32,13 +32,13 @@ DateTime dt2=Convert.ToDateTime(st2);
 
 ## 4.获取当前时间：
 
-```C#
+```csharp
 DateTime dt3=DateTime.Now;
 ```
 
 ## 5.命名方法委托：
 
-```C#
+```csharp
 class Program
 {
     public delegate void MyDelegate();
@@ -50,16 +50,16 @@ class Program
 }
 class Test
 {
-    public static void SayHello()
+    public static void SayHello(string str)
     {
-        Console.WriteLine("Hello Delegate!");
+        Console.WriteLine("Hello {0}!", str);
     }
 }
 ```
 
 ## 6.使用方法回调，实现给文本框赋值：
 
-```C#
+```csharp
 namespace MultiThreadDemo
 {
     public partial class Form1 : Form
@@ -109,7 +109,7 @@ namespace MultiThreadDemo
 
 ## 7.获得某数据类型的范围（尺寸）
 
-```C#
+```csharp
 namespace DataTypeApplication
 {
    class Program
@@ -133,7 +133,7 @@ namespace DataTypeApplication
 
 Internal 访问说明符允许一个类将其成员变量和成员函数暴露给当前程序中的其他函数和对象。换句话说，带有 internal 访问修饰符的任何成员可以被定义在该成员所定义的应用程序内的任何类或方法访问。
 
-```C#
+```csharp
 using System;
 
 namespace RectangleApplication
@@ -181,9 +181,102 @@ Protected Internal 访问修饰符允许一个类将其成员变量和成员函�
 -  (4) internal : 同一个程序集的对象可以访问。
 -  (5) Protected internal ：3 和 4 的并集，符合任意一条都可以访问。
 
-```C#
+```csharp
 private < internal/protected < protected internal < public
 ```
+
+## 9.using三种用法
+
+- `using`指令：
+
+  `using + 命名空间名字`，这样可以在程序中直接用命令空间中的类型，而不必指定类型的详细命名空间，类似于Java的import，这个功能也是最常用的，几乎每个cs的程序都会用到。
+  例如：``using System`; 一般都会出现在`*.cs`中。
+
+- `using`别名。`using + 别名` = 包括详细命名空间信息的具体的类型。
+  这种做法有个好处就是当同一个.cs引用了两个不同的命名空间，但两个命名空间都包括了一个相同名字的类型的时候。当需要用到这个类型的时候，就每个地方都要用详细命名空间的办法来区分这些相同名字的类型。而用别名的方法会更简洁，用到哪个类就给哪个类做别名声明就可以了。注意：并不是说两个名字重复，给其中一个用了别名，另外一个就不需要用别名了，如果两个都要使用，则两个都需要用using来定义别名的。
+
+  ```C#
+  using System;
+  
+  //using 别名
+  using aClass = NameSpace1.MyClass;
+  using bClass = NameSpace2.MyClass;
+   
+  namespace NameSpace1 
+  {
+      public class MyClass 
+      {
+          public override string ToString() 
+          {
+              return "You are in NameSpace1.MyClass";
+          }
+      }
+  }
+   
+  namespace NameSpace2 
+  {
+      class MyClass 
+      {
+          public override string ToString() 
+          {
+              return "You are in NameSpace2.MyClass";
+          }
+      }
+  }
+   
+  namespace testUsing
+  {
+      using NameSpace1;
+      using NameSpace2;
+      /// <summary>
+      /// Class1 的摘要说明。
+      /// </summary>
+      class Class1
+      {
+          /// <summary>
+          /// 应用程序的主入口点。
+          /// </summary>
+          [STAThread]
+          static void Main(string[] args)
+          {
+              //
+              // TODO: 在此处添加代码以启动应用程序
+              //
+   
+              aClass my1 = new aClass();
+              Console.WriteLine(my1);
+              bClass my2 = new bClass();
+              Console.WriteLine(my2);
+              Console.WriteLine("Press any key");
+              Console.Read();
+          }
+      }
+  }
+  ```
+
+- `using`语句
+
+  定义一个范围，在范围结束时处理对象。
+  场景：
+  当在某个代码段中使用了类的实例，而希望无论因为什么原因，只要离开了这个代码段就自动调用这个类实例的Dispose（要实现IDisposeable接口的Dispose方法）。
+  要达到这样的目的，用try...catch来捕捉异常也是可以的，但用using也很方便。
+
+  ```C#
+  using (Class1 cls1 = new Class1(), cls2 = new Class1())
+  {
+    // the code using cls1, cls2
+  } // call the Dispose on cls1 and cls2
+  ```
+
+## 10.[STAThread]
+
+​	https://blog.csdn.net/zmj_tata/article/details/42120159
+
+## 11.C#内置泛型委托
+
+​	像java中的内建函数式接口
+
+​	https://www.jianshu.com/p/4775095f2902
 
 # 学习C#
 
@@ -199,7 +292,7 @@ private < internal/protected < protected internal < public
 
 ### 2.对象（Object）类型
 
-**对象（Object）类型** 是 C# 通用类型系统（Common Type System - CTS）中所有数据类型的终极基类。Object 是 System.Object 类的别名。所以对象（Object）类型可以被分配任何其他类型（值类型、引用类型、预定义类型或用户自定义类型）的值。但是，在分配值之前，需要先进行类型转换。
+**对象（Object）类型** 是 csharp 通用类型系统（Common Type System - CTS）中所有数据类型的终极基类。Object 是 System.Object 类的别名。所以对象（Object）类型可以被分配任何其他类型（值类型、引用类型、预定义类型或用户自定义类型）的值。但是，在分配值之前，需要先进行类型转换。
 
 当一个值类型转换为对象类型时，则被称为 **装箱**；另一方面，当一个对象类型转换为值类型时，则被称为 **拆箱**。
 
@@ -209,7 +302,7 @@ private < internal/protected < protected internal < public
 
 声明动态类型的语法：
 
-```C#
+```csharp
 dynamic d = 20;
 ```
 
@@ -219,12 +312,12 @@ dynamic d = 20;
 
 **字符串（String）类型** 允许您给变量分配任何字符串值。字符串（String）类型是 System.String 类的别名。它是从对象（Object）类型派生的。字符串（String）类型的值可以通过两种形式进行分配：引号和 @引号。
 
-```C#
+```csharp
 String str = "w3cschool.cn";
 
 @"w3cschool.cn";
 
-//C# string 字符串的前面可以加 @（称作"逐字字符串"）将转义字符（\）当作普通字符对待，比如：
+//csharp string 字符串的前面可以加 @（称作"逐字字符串"）将转义字符（\）当作普通字符对待，比如：
 string str = @"C:\Windows";
 //等价于：
 string str = "C:\\Windows";
@@ -238,9 +331,9 @@ string str = @"<script type=""text/javascript"">
 
 ### 5.指针类型（Pointer types）
 
-指针类型变量存储另一种类型的内存地址。C# 中的指针与 C 或 C++ 中的指针有相同的功能。
+指针类型变量存储另一种类型的内存地址。csharp 中的指针与 C 或 C++ 中的指针有相同的功能。
 
-```C#
+```csharp
 //声明
 type* identifier;
 //如：
@@ -252,7 +345,7 @@ int* iptr;
 
 用于数据库
 
-```C#
+```csharp
 声明一个 nullable 类型（可空类型）的语法如下：
 <data_type> ? <variable_name> = null;
 int? num1 = null;
@@ -268,7 +361,7 @@ bool? boolval = new bool?();
 
 值类型直接包含数据。比如 **int、char、float**，它们分别存储数字、字母、浮点数。当您声明一个 **int** 类型时，系统分配内存来存储值。
 
-下表列出了 C# 2010 中可用的值类型：
+下表列出了 csharp 2010 中可用的值类型：
 
 | 类型    | 描述                                 | 范围                                                    | 默认值 |
 | :------ | :----------------------------------- | :------------------------------------------------------ | :----- |
@@ -288,7 +381,7 @@ bool? boolval = new bool?();
 
 如需得到一个类型或一个变量在特定平台上的准确尺寸，可以使用 **sizeof** 方法。表达式 *sizeof(type)* 产生以字节为单位存储对象或类型的存储尺寸。下面举例获取任何机器上 *int* 类型的存储尺寸：
 
-```C#
+```csharp
 namespace DataTypeApplication
 {
    class Program
@@ -304,7 +397,7 @@ namespace DataTypeApplication
 
 当上面的代码被编译和执行时，它会产生下列结果：
 
-```C#
+```csharp
 Size of int: 4
 ```
 
@@ -338,9 +431,9 @@ is判断对象是否为某一类型。If( Ford is Car) // 检查 Ford 是否是 
 
 ### 7.as
 
-as强制转换，即使转换失败也不会抛出异常。
+`as`强制转换，即使转换失败也不会抛出异常。
 
-```C#
+```csharp
 Object obj = new StringReader("Hello");
 StringReader r = obj as StringReader;
 ```
@@ -349,7 +442,7 @@ StringReader r = obj as StringReader;
 
 Null 合并运算符用于定义可空类型和引用类型的默认值。Null 合并运算符为类型转换定义了一个预设值，以防可空类型的值为 Null。Null 合并运算符把操作数类型隐式转换为另一个可空（或不可空）的值类型的操作数的类型。
 
-```c#
+```csharp
 //如果第一个操作数的值为 null，则运算符返回第二个操作数的值，否则返回第一个操作数的值。下面的实例演示了这点：
 double? num1 = null;
 double? num2 = 3.14157;
@@ -373,7 +466,7 @@ Console.ReadLine();
 
 构造方法是在创建类的对象时执行的，而析构方法则是在垃圾回收、释放资源时使用的。
 
-```C#
+```csharp
 ~类名()
 {
   语句块；
@@ -382,7 +475,7 @@ Console.ReadLine();
 
 ### 3.get 访问器和 set 访问器：
 
-```C#
+```csharp
 public int Id{get; set;}
 public string Name{get; set;}
 public double Price{get; set;}
@@ -489,7 +582,7 @@ public int Id{private get; set;}
 
 1. 隐式类型转换：
 
-   这些转换是 C# 默认的以安全方式进行的转换，不会导致数据丢失。例如，从小的整数类型转换为大的整数类型，从派生类转换为基类。
+   这些转换是 csharp 默认的以安全方式进行的转换，不会导致数据丢失。例如，从小的整数类型转换为大的整数类型，从派生类转换为基类。
 
    隐式数值转换包括以下几种：
 
@@ -531,7 +624,7 @@ public int Id{private get; set;}
 
 3. 强制类型转换：
 
-   ```C#
+   ```csharp
    double dbl_num = 12345678910.456;
    int k = (int) dbl_num ;//此处运用了强制转换
    ```
@@ -557,9 +650,9 @@ public int Id{private get; set;}
 
 6. 装箱与拆箱
 
-   在 C# 语言中数据类型分为值类型和引用类型，将值类型转换为引用类型的操作称为装箱，相应地将引用类型转换成值类型称为拆箱。
+   在 csharp 语言中数据类型分为值类型和引用类型，将值类型转换为引用类型的操作称为装箱，相应地将引用类型转换成值类型称为拆箱。
 
-   ```C#
+   ```csharp
    //装箱
    int a=100;
    string str=a.ToString();
@@ -594,11 +687,11 @@ public int Id{private get; set;}
 
    正则表达式中使用`|`分隔符表示多个正则表达式之间的或者关系，也就是在匹配某一个字符串时满足其中一个正则表达式即可。
 
-   在 C# 语言中使用正则表达式时要用到 Regex 类,该类在 System.Text.RegularExpressions 名称空间中。
+   在 csharp 语言中使用正则表达式时要用到 Regex 类,该类在 System.Text.RegularExpressions 名称空间中。
 
    在 Regex 类中使用 IsMatch 方法判断所匹配的字符串是否满足正则表达式的要求。
 
-   ```C#
+   ```csharp
    class Program
    {
        static void Main(string[] args)
@@ -646,17 +739,17 @@ public int Id{private get; set;}
 | ---- | ------------------------ | ------------------------------------------------------------ |
 | 1    | \d{15}\|\d{18}           | 验证身份证号码（15位或18位）                                 |
 | 2    | \d{3}-\d{8}\|\d{4}-\d{7} | 验证国内的固定电话（区号有3位或4位，并在区号和电话号码之 间加上-） |
-| 3    | ^[1-9]\d*$               | 验证字符串中都是正整数                                       |
+| 3    | \^[1-9]\d*$               | 验证字符串中都是正整数                                       |
 | 4    | ^-[1-9]\d*$              | 验证字符串中都是负整数                                       |
 | 5    | ^-?[1-9]\d*$             | 验证字符串中是整数                                           |
-| 6    | ^[A-Za-z]+$              | 验证字符串中全是字母                                         |
+| 6    | \^[A-Za-z]+$              | 验证字符串中全是字母                                         |
 | 7    | A[A-Za-z0-9]+$           | 验证字符串由数字和字母构成                                   |
 | 8    | [\u4e00-\u9fa5]          | 匹配字符串中的中文                                           |
 | 9    | [^\x00-\xff]             | 匹配字符串中的双字节字符（包括汉字）                         |
 
 ## 五、数组：
 
-```C#
+```csharp
 //声明数组
 datatype[] arrayName;
 //例如：
@@ -833,13 +926,13 @@ Hashtable 类中常用的属性和方法如下表所示。
 
 ### 5.SortedList 类
 
-SortedList 集合中所使用的属性和方法与上一节《[C# Hashtable](http://c.biancheng.net/view/2897.html)》中介绍的 Hashtable 比较类似，这里不再赘述。
+SortedList 集合中所使用的属性和方法与上一节《[csharp Hashtable](http://c.biancheng.net/view/2897.html)》中介绍的 Hashtable 比较类似，这里不再赘述。
 
 ## 七、结构(Struct)：
 
 ### 定义结构
 
-```C#
+```csharp
 using System;
      
 struct Books
@@ -900,9 +993,9 @@ Book 2 subject : Telecom Billing Tutorial
 Book 2 book_id : 6495700
 ```
 
-### C# 结构的特点
+### csharp 结构的特点
 
-您已经用了一个简单的名为 Books 的结构。在 C# 中的结构与传统的 C 或 C++ 中的结构不同。C# 中的结构有以下特点：
+您已经用了一个简单的名为 Books 的结构。在 csharp 中的结构与传统的 C 或 C++ 中的结构不同。csharp 中的结构有以下特点：
 
 - 结构可带有方法、字段、索引、属性、运算符方法和事件。
 - 结构可定义构造函数，但**不能定义析构函数**。但是，您**不能为结构定义默认的构造函数**。默认的构造函数是自动定义的，且不能被改变。
@@ -923,7 +1016,7 @@ Book 2 book_id : 6495700
 
 针对上述讨论，让我们重写前面的实例：
 
-```C#
+```csharp
 using System;
      
 struct Books
@@ -997,7 +1090,7 @@ Book_id : 6495700
 
 声明：
 
-```C#
+```csharp
 enum <enum_name>
 { 
     enumeration list 
@@ -1011,7 +1104,7 @@ enum <enum_name>
 
 枚举列表中的每个符号代表一个整数值，一个比它前面的符号大的整数值。默认情况下，第一个枚举符号的值是 0.例如：
 
-```C#
+```csharp
 enum Days { Sun, Mon, tue, Wed, thu, Fri, Sat };
 
 //实例
@@ -1044,8 +1137,8 @@ namespace EnumApplication
 
  2、添加元素
 
-```C#
-myDictionary.Add(1,"C#");
+```csharp
+myDictionary.Add(1,"csharp");
 myDictionary.Add(2,"C++");
 myDictionary.Add(3,"ASP.NET");
 myDictionary.Add(4,"MVC");
@@ -1053,7 +1146,7 @@ myDictionary.Add(4,"MVC");
 
  3、通过Key查找元素
 
-```C#
+```csharp
 if(myDictionary.ContainsKey(1))
 {
 	Console.WriteLine("Key:{0},Value:{1}","1", myDictionary[1]);
@@ -1062,7 +1155,7 @@ if(myDictionary.ContainsKey(1))
 
  4、通过KeyValuePair遍历元素
 
-```C#
+```csharp
 foreach(KeyValuePair<int,string>kvp in myDictionary)
 {
 	Console.WriteLine("Key = {0}, Value = {1}",kvp.Key, kvp.Value);
@@ -1071,7 +1164,7 @@ foreach(KeyValuePair<int,string>kvp in myDictionary)
 
 5、仅遍历键 Keys 属性
 
-```C#
+```csharp
 Dictionary<int,string>.KeyCollection keyCol=myDictionary.Keys;
 foreach(intkey in keyCol)
 {
@@ -1081,7 +1174,7 @@ foreach(intkey in keyCol)
 
 6、仅遍历值 Valus属性
 
-```C#
+```csharp
 Dictionary<int,string>.ValueCollection valueCol=myDictionary.Values;
 foreach(stringvalueinvalueCol)
 {
@@ -1091,7 +1184,7 @@ foreach(stringvalueinvalueCol)
 
 7、通过Remove方法移除指定的键值
 
-```C#
+```csharp
 myDictionary.Remove(1);
 if(myDictionary.ContainsKey(1))
 {
@@ -1129,15 +1222,14 @@ else
 
 2. 成员变量是对象的属性（从设计角度），且它们**保持私有**来实现**封装**
 
-3. 析构函数：
+### 1. 析构函数
+	也叫对象的终结器
+   - 当类的对象超出范围时执行，调用对象结束执行
+   - 无返回值，无参数
+   - 用于在结束程序（比如关闭文件、释放内存等）之前释放资源
+   - 不能继承或重载
 
-   当类的对象超出范围时执行，调用对象结束执行。
-
-   无返回值，无参数。
-
-   析构函数用于在结束程序（比如关闭文件、释放内存等）之前释放资源。析构函数不能继承或重载
-
-   ```C#
+   ```csharp
    using System;
    namespace LineApplication
    {
@@ -1178,29 +1270,591 @@ else
    对象已删除
    ```
 
-   
 
-4. 静态成员：static
+### 2. 静态成员：static
+- 无论创建多少个类的对象，只会有一个该静态成员的副本，可用于记住创建了多少个类对象
+- 静态成员（属性和方法）属于类，无论哪个对象对其修改，都是改的同一个，使用时要注意
 
-   无论创建多少个类的对象，只会有一个该静态成员的副本，可用于记住创建了多少个类对象
+### 3. 继承
+is a  狗是哺乳动物
+java中用关键字extands实现继承，C#用“:”
+#### 基类的初始化
+```csharp
+public Tabletop(double l, double w) : base(l, w)
+{ }
+```
+### 4. 多态性
+#### 分类
+1. 静态多态性：函数的响应是在编译时发生的
+2. 动态多态性：函数的响应是在运行时发生的。
+#### 静态多态性
+在编译时，函数和对象的连接机制被称为**早期绑定**，也被称为**静态绑定**。
+##### 实现
+- 函数重载
+- 运算符重载
 
-   静态成员（属性和方法）属于类，无论哪个对象对其修改，都是改的同一个，使用时要注意
+###### 函数重载
+函数名称相同，参数类型不同/参数数目不同，不能重载只有返回类型不同的函数声明。
 
-5. 
+###### 运算符重载
+（关键字 `operator`）重定义或重载 C# 中内置的运算符
+重载 + 运算符来把两个 Box 对象相加：
 
-   
+```csharp
+public static Box operator+ (Box b, Box c)
+{
+	Box box = new Box();
+	box.length = b.length + c.length;
+	box.breadth = b.breadth + c.breadth;
+	box.height = b.height + c.height;
+	return box;
+}
+//使用：
+Box3 = Box1 + Box2;
+```
+*不是所有的运算符都能重载。*
+#### 动态多态性
+##### 实现
+- 抽象类
+- 虚方法
+###### 抽象类
+关键字 `abstract`
+有关抽象类的一些规则：
+1. 抽象类不能实例化
+2. 抽象类外部不能声明抽象方法
+3. 关键字 `sealed`，可以将类声明为密封类，不能被继承。但抽象类不能被声明为 `sealed`
 
-   
+抽象类定义：
+```csharp
+//抽象类
+abstract class Shape
+{
+	//抽象方法
+	public abstract int area();
+}
 
-   
+class Test : Shape
+{	
+	//重写抽象类方法：override关键字，java中用于重写检查，看抽象类是否有此方法以及重写的正确性
+	public override int area ()
+	{ 
+		Console.WriteLine("Rectangle 类的面积：");
+		return (width * length); 
+	}
+}
+```
+###### 虚方法
+关键字 `virtual`
+- 当有一个定义在类（不是抽象类）中的*函数需要在继承类中实现*时，可以使用虚方法
+- 虚方法可以在不同的继承类中有不同的实现。对虚方法的调用是在运行时发生的
+```csharp
+using System;
+namespace PolymorphismApplication
+{
+	class Shape 
+	{
+		protected int width, height;
+		public Shape( int a=0, int b=0)
+		{
+			width = a;
+			height = b;
+		}
+		//虚方法
+		public virtual int area()
+		{
+			Console.WriteLine("父类的面积：");
+			return 0;
+		}
+	}
+	class Rectangle: Shape
+	{
+		public Rectangle( int a=0, int b=0): base(a, b)
+		{
 
-   
+		}
+		//重写虚方法
+		public override int area ()
+		{
+			Console.WriteLine("Rectangle 类的面积：");
+			return (width * height); 
+		}
+	}
+}
+```
+**抽象方法和虚方法的区别:**
+1. 虚方法必须有实现部分，抽象方法没有提供实现部分，抽象方法是一种强制派生类覆盖的方法，否则派生类将不能被实例化。
+2. 抽象方法只能在抽象类中声明，虚方法不是。如果类包含抽象方法，那么该类也是抽象的，也必须声明类是抽象的。
+3. 抽象方法必须在派生类中重写，这一点和接口类似，虚方法不需要再派生类中重写。
+4. 简单说，抽象方法是需要子类去实现的。虚方法是已经实现了的，可以被子类覆盖，也可以不覆盖，取决于需求。
+### 5. 接口
+接口定义了所有类继承接口时应遵循的语法合同。接口定义了语法合同 "是什么" 部分，派生类定义了语法合同 "怎么做" 部分。
+#### 接口声明
+`interface`关键字，与类的声明类似。默认是` public` 的。
+```csharp
+	public interface ITransactions
+	{
+		// 接口成员（方法只有名称，没有方法体）
+		void showTransaction();
+		double getAmount();
+	}
+```
+#### 接口实现
+方式和继承一样，用“`:`”
+```csharp
+public class Transaction : ITransactions
+{
+	private string tCode;
+  	private string date;
+  	private double amount;
+  	public Transaction()
+  	{
+		tCode = " ";
+	 	date = " ";
+         amount = 0.0;
+  	}
+  	public Transaction(string c, string d, double a)
+  	{
+	 	tCode = c;
+	 	date = d;
+	 	amount = a;
+  	}
+  	//实现接口的方法
+  	public double getAmount()
+  	{
+	 	return amount;
+  	}
+  	//实现接口的方法
+  	public void showTransaction()
+  	{
+	 	Console.WriteLine("Transaction: {0}", tCode);
+	 	Console.WriteLine("Date: {0}", date);
+	 	Console.WriteLine("Amount: {0}", getAmount());
+  	}
+}
+```
+#### 接口使用的注意事项
+1. 接口方法不能用public abstract等修饰。
+2. 接口内不能有字段变量，构造函数。
+3. 接口内可以定义属性（有get和set的方法）。如string color { get ; set ; }这种。
+4. 实现接口时，必须和接口的格式一致。
+5. 必须实现接口的所有方法。
 
-   
+### 6. 命名空间
+在不同的命名空间可以声明相同名称的类，有点像`java`的包`package`
+#### 使用命名空间
+```csharp
+using System;
+namespace first_space
+{
+	class namespace_cl
+	{
+		public void func()
+		{
+			Console.WriteLine("Inside first_space");
+		}
+	}
+}
+namespace second_space
+{
+	class namespace_cl
+	{
+		public void func()
+		{
+			Console.WriteLine("Inside second_space");
+		}
+	}
+}
 
-   
+class TestClass
+{
+	static void Main(string[] args)
+	{
+        //实例化命名空间的类
+		first_space.namespace_cl fc = new first_space.namespace_cl();
+		second_space.namespace_cl sc = new second_space.namespace_cl();
+		fc.func();
+		c.func();
+		Console.ReadKey();
+	}
+}
+```
 
-   
+#### using 关键字
+相当于`java`中的`import`关键字
+#### 命名空间的嵌套
+```csharp
+using System;
+using first_space;
+//这句是关键
+using first_space.second_space;
 
-   
+namespace first_space
+{
+   class abc
+   {
+      public void func()
+      {
+         Console.WriteLine("Inside first_space");
+      }
+   }
+   namespace second_space
+   {
+      class efg
+      {
+         public void func()
+         {
+            Console.WriteLine("Inside second_space");
+         }
+      }
+   }   
+}
+ 
+class TestClass
+{
+   static void Main(string[] args)
+   {
+      abc fc = new abc();
+      efg sc = new efg();
+      fc.func();
+      sc.func();
+      Console.ReadKey();
+   }
+}
+```
+### 7. 预处理器指令
+1. 预处理器指令 以 # 开始。且在一行上，只有空白字符可以出现在预处理器指令之前。预处理器指令不是语句，所以它们不以分号`;`结束。
+2. C# 编译器没有一个单独的预处理器，但是，指令被处理时就像是有一个单独的预处理器一样。在 C# 中，预处理器指令用于在条件编译中起作用。与 C 和 C++ 不同指令不用，它们不是用来创建宏。一个预处理器指令必须是该行上的唯一指令。
 
+**C# 预处理器指令列表:**
+预处理器指令 | 描述
+:------ | :------
+#define	| 定义符号。
+#if	| 它用于测试符号是否为真。
+#else	| 它用于创建复合条件指令，与 #if 一起使用。
+#elif	| 它用于创建复合条件指令。
+#endif	| 指定一个条件指令的结束。
+#line	| 它可以让您修改编译器的行数以及（可选地）输出错误和警告的文件名。
+#error	| 它允许从代码的指定位置生成一个错误。
+#warning	| 它允许从代码的指定位置生成一级警告。
+#region	| 它可以让您在使用 Visual Studio Code Editor 的大纲特性时，指定一个可展开或折叠的代码块。
+#endregion	| 它标识着 #region 块的结束。
+
+#### #define 预处理器
+`#define` 预处理器指令创建符号常量。
+`#define` 允许您定义一个符号，这样，通过使用符号作为传递给` #if `指令的表达式，表达式将返回` true`。它的语法如下：
+```csharp
+#define symbol
+```
+下面的程序说明了这点：
+```csharp
+#define PI 
+using System;
+namespace PreprocessorDAppl
+{
+   class Program
+   {
+      static void Main(string[] args)
+      {
+         #if (PI)
+            Console.WriteLine("PI is defined");
+         #else
+            Console.WriteLine("PI is not defined");
+         #endif
+         Console.ReadKey();
+      }
+   }
+}
+```
+当上面的代码被编译和执行时，它会产生下列结果：
+```csharp
+PI is defined
+```
+#### 条件指令
+使用` #if `指令来创建一个条件指令。用于测试符号是否为真。如果为真，编译器会执行 #if 和下一个指令之间的代码。
+
+条件指令的语法：
+```csharp
+#if symbol [operator symbol]...
+```
+其中，`symbol `是要测试的符号名称。您也可以使用 `true` 和 `false`，或在符号前放置否定运算符。
+
+运算符符号是用于评价符号的运算符。可以是下列运算符之一：
+- == (equality)
+- != (inequality)
+- && (and)
+- || (or)
+
+也可以用括号把符号和运算符进行分组。条件指令用于在调试版本或编译指定配置时编译代码。一个以 `#if`指令开始的条件指令，必须显示地以一个` #endif `指令终止。
+
+下面的程序演示了条件指令的用法：
+```csharp
+#define DEBUG
+#define VC_V10
+using System;
+public class TestClass
+{
+   public static void Main()
+   {
+
+      #if (DEBUG && !VC_V10)
+         Console.WriteLine("DEBUG is defined");
+      #elif (!DEBUG && VC_V10)
+         Console.WriteLine("VC_V10 is defined");
+      #elif (DEBUG && VC_V10)
+         Console.WriteLine("DEBUG and VC_V10 are defined");
+      #else
+         Console.WriteLine("DEBUG and VC_V10 are not defined");
+      #endif
+      Console.ReadKey();
+   }
+}
+```
+当上面的代码被编译和执行时，它会产生下列结果：
+```csharp
+DEBUG and VC_V10 are defined
+```
+
+### 8. 异常处理
+C# 异常处理是建立在四个关键词之上的：`try`、`catch`、`finally` 和 `throw`。
+- `try`：一个 `try` 块标识了一个将被激活的特定的异常的代码块。后跟一个或多个` catch` 块。
+- `catch`：程序通过异常处理程序捕获异常。`catch` 关键字表示异常的捕获。
+- `finally`：`finally` 块用于执行给定的语句，不管异常是否被抛出都会执行。例如，如果您打开一个文件，不管是否出现异常文件都要被关闭。
+- `throw`：当问题出现时，程序抛出一个异常。使用 `throw `关键字来完成。
+
+#### 语法
+假设一个块将出现异常，一个方法使用`try` 和 `catch` 关键字捕获异常。`try/catch` 块内的代码为受保护的代码，使用 `try/catch `语法如下所示：
+```csharp
+try
+{
+   // 引起异常的语句
+}
+catch( ExceptionName e1 )
+{
+   // 错误处理代码
+}
+catch( ExceptionName e2 )
+{
+   // 错误处理代码
+}
+catch( ExceptionName eN )
+{
+   // 错误处理代码
+}
+finally
+{
+   // 要执行的语句
+}
+```
+可以列出多个 `catch` 语句捕获不同类型的异常，以防` try` 块在不同的情况下生成多个异常。
+
+#### C# 中的异常类
+C# 异常是使用`类`来表示的。C# 中的`异常类`主要是直接或间接地派生于 `System.Exception` 类。`System.ApplicationException` 和 `System.SystemException` 类是派生于 `System.Exception` 类的异常类。
+
+`System.ApplicationException` 类支持由应用程序生成的异常。所以程序员定义的异常都应派生自该类。
+
+`System.SystemException` 类是所有预定义的系统异常的基类。
+
+下表列出了一些派生自 `Sytem.SystemException` 类的预定义的异常类：
+
+异常类	|描述
+:------ | :------
+System.IO.IOException	| 处理 I/O 错误。
+System.IndexOutOfRangeException	| 处理当方法指向超出范围的数组索引时生成的错误。
+System.ArrayTypeMismatchException	| 处理当数组类型不匹配时生成的错误。
+System.NullReferenceException	| 处理当依从一个空对象时生成的错误。
+System.DivideByZeroException	| 处理当除以零时生成的错误。
+System.InvalidCastException	| 处理在类型转换期间生成的错误。
+System.OutOfMemoryException	| 处理空闲内存不足生成的错误。
+System.StackOverflowException	| 处理栈溢出生成的错误。
+#### 异常处理
+ `try` 和 `catch` 块。使用这些块，把核心程序语句与错误处理语句分离开。
+```csharp
+using System;
+namespace ErrorHandlingApplication
+{
+    class DivNumbers
+    {
+        int result;
+        DivNumbers()
+        {
+            result = 0;
+        }
+        public void division(int num1, int num2)
+        {
+            try
+            {
+                result = num1 / num2;
+            }
+            catch (DivideByZeroException e)
+            {
+                Console.WriteLine("Exception caught: {0}", e);
+            }
+            finally
+            {
+                Console.WriteLine("Result: {0}", result);
+            }
+
+        }
+        static void Main(string[] args)
+        {
+            DivNumbers d = new DivNumbers();
+            d.division(25, 0);
+            Console.ReadKey();
+        }
+    }
+}
+```
+
+当上面的代码被编译和执行时，它会产生下列结果：
+```csharp
+Exception caught: System.DivideByZeroException: Attempted to divide by zero. 
+at ...
+Result: 0
+```
+#### 自定义异常
+自定义的异常类是派生自 `ApplicationException` 类。
+```csharp
+using System;
+namespace UserDefinedException
+{
+   class TestTemperature
+   {
+      static void Main(string[] args)
+      {
+         Temperature temp = new Temperature();
+         try
+         {
+            temp.showTemp();
+         }
+         catch(TempIsZeroException e)
+         {
+            Console.WriteLine("TempIsZeroException: {0}", e.Message);
+         }
+         Console.ReadKey();
+      }
+   }
+}
+//自定义异常
+public class TempIsZeroException: ApplicationException
+{
+	//massage是参数
+   public TempIsZeroException(string message): base(message)
+   {
+   }
+}
+public class Temperature
+{
+   int temperature = 0;
+   public void showTemp()
+   {
+      if(temperature == 0)
+      {
+      	//抛出自定义异常
+         throw (new TempIsZeroException("Zero Temperature found"));
+      }
+      else
+      {
+         Console.WriteLine("Temperature: {0}", temperature);
+      }
+   }
+}
+```
+当上面的代码被编译和执行时，它会产生下列结果：
+```csharp
+TempIsZeroException: Zero Temperature found
+```
+#### 抛出异常
+如果异常是直接或间接派生自 System.Exception 类，可以抛出一个异常。可以在 `catch` 块中使用 `throw` 语句来抛出当前的异常，如下所示：
+```csharp
+Catch(Exception e)
+{
+   ...
+   Throw e
+}
+```
+
+### 9. 文件的输入与输出
+一个`文件`是一个存储在磁盘中带有指定名称和目录路径的数据集合。当打开文件进行读写时，它变成一个`流`。
+
+从根本上说，*流是通过通信路径传递的字节序列*。有两个主要的流：`输入流` 和 `输出流`。输入流用于从文件读取数据（读操作），输出流用于向文件写入数据（写操作）。
+
+#### C# I/O 类
+`System.IO` 命名空间有各种不同的类，用于执行各种文件操作，如创建和删除文件、读取或写入文件，关闭文件等。
+
+下表列出了一些 `System.IO` 命名空间中常用的非抽象类：
+
+I/O 类	|描述
+:------ | :------
+BinaryReader		|从二进制流读取原始数据。
+BinaryWriter		|以二进制格式写入原始数据。
+BufferedStream	|字节流的临时存储。
+Directory				|有助于操作目录结构。
+DirectoryInfo		|用于对目录执行操作。
+DriveInfo				|提供驱动器的信息。
+File						|有助于处理文件。
+FileInfo				|用于对文件执行操作。
+FileStream			|用于文件中任何位置的读写。
+MemoryStream	|用于随机访问存储在内存中的数据流。
+Path						|对路径信息执行操作。
+StreamReader		| 用于从字节流中读取字符。
+StreamWriter		|用于向一个流中写入字符。
+StringReader		|用于读取字符串缓冲区。
+StringWriter			|用于写入字符串缓冲区。
+#### FileStream 类:
+`System.IO` 命名空间中的 `FileStream` 类有助于文件的读写与关闭。该类派生自抽象类 `Stream`。
+
+创建一个 FileStream 对象来创建一个新的文件或打开一个已有的文件。创建 FileStream 对象的语法如下：
+```csharp
+FileStream <object_name> = new FileStream( <file_name>,
+<FileMode Enumerator>, <FileAccess Enumerator>, <FileShare Enumerator>);
+```
+例如，创建一个 FileStream 对象 F 来读取名为 sample.txt 的文件：
+```scharp
+FileStream F = new FileStream("sample.txt", FileMode.Open, FileAccess.Read, FileShare.Read);
+```
+| 参数	| 描述 |
+|:------ | :------|
+|FileMode		| FileMode 枚举定义了各种打开文件的方法。FileMode 枚举的成员有： <br> Append：打开一个已有的文件，并将光标放置在文件的末尾。如果文件不存在，则创建文件。<br>Create：创建一个新的文件。如果文件已存在，则删除旧文件，然后创建新文件。<br>CreateNew：指定操作系统应创建一个新的文件。如果文件已存在，则抛出异常。<br>Open：打开一个已有的文件。如果文件不存在，则抛出异常。<br>OpenOrCreate：指定操作系统应打开一个已有的文件。如果文件不存在，则用指定的名称创建一个新的文件打开。<br>Truncate：打开一个已有的文件，文件一旦打开，就将被截断为零字节大小。然后我们可以向文件写入全新的数据，但是保留文件的初始创建日期。如果文件不存在，则抛出异常。|
+| FileAccess	| FileAccess 枚举的成员有：Read、ReadWrite 和 Write。|
+|FileShare	|  FileShare 枚举的成员有：<br>Inheritable：允许文件句柄可由子进程继承。Win32 不直接支持此功能。<br>None：谢绝共享当前文件。文件关闭前，打开该文件的任何请求（由此进程或另一进程发出的请求）都将失败。<br>Read：允许随后打开文件读取。如果未指定此标志，则文件关闭前，任何打开该文件以进行读取的请求（由此进程或另一进程发出的请求）都将失败。但是，即使指定了此标志，仍可能需要附加权限才能够访问该文件.<br>ReadWrite：允许随后打开文件读取或写入。如果未指定此标志，则文件关闭前，任何打开该文件以进行读取或写入的请求（由此进程或另一进程发出）都将失败。但是，即使指定了此标志，仍可能需要附加权限才能够访问该文件。<br>Write：允许随后打开文件写入。如果未指定此标志，则文件关闭前，任何打开该文件以进行写入的请求（由此进程或另一进过程发出的请求）都将失败。但是，即使指定了此标志，仍可能需要附加权限才能够访问该文件。<br>Delete：允许随后删除文件。|
+**实例**
+下面的程序演示了 FileStream 类的用法：
+
+```csharp
+using System;
+using System.IO;
+
+namespace FileIOApplication
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            FileStream F = new FileStream("test.dat", 
+            FileMode.OpenOrCreate, FileAccess.ReadWrite);
+
+            for (int i = 1; i <= 20; i++)
+            {
+                F.WriteByte((byte)i);
+            }
+            F.Position = 0;
+            for (int i = 0; i <= 20; i++)
+            {
+                Console.Write(F.ReadByte() + " ");
+            }
+            F.Close();
+            Console.ReadKey();
+        }
+    }
+}
+```
+当上面的代码被编译和执行时，它会产生下列结果：
+```csharp
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 -1
+```
+### 10. Dll类库与exe可执行程序
+1. Dll （动态链接库）
+	不能独立运行，实质为一些函数集（类库）
+2. exe引用Dll
+	VS项目中的引用里手动引用
+	[DllImport(...)] 用于方法上

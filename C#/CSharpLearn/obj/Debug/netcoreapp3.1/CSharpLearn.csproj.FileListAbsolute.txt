@@ -1,0 +1,13 @@
+D:\SUGAR\笔记\C#\CSharpLearn\bin\Debug\netcoreapp3.1\CSharpLearn.exe
+D:\SUGAR\笔记\C#\CSharpLearn\bin\Debug\netcoreapp3.1\CSharpLearn.deps.json
+D:\SUGAR\笔记\C#\CSharpLearn\bin\Debug\netcoreapp3.1\CSharpLearn.runtimeconfig.json
+D:\SUGAR\笔记\C#\CSharpLearn\bin\Debug\netcoreapp3.1\CSharpLearn.runtimeconfig.dev.json
+D:\SUGAR\笔记\C#\CSharpLearn\bin\Debug\netcoreapp3.1\CSharpLearn.dll
+D:\SUGAR\笔记\C#\CSharpLearn\bin\Debug\netcoreapp3.1\CSharpLearn.pdb
+D:\SUGAR\笔记\C#\CSharpLearn\obj\Debug\netcoreapp3.1\CSharpLearn.csprojAssemblyReference.cache
+D:\SUGAR\笔记\C#\CSharpLearn\obj\Debug\netcoreapp3.1\CSharpLearn.AssemblyInfoInputs.cache
+D:\SUGAR\笔记\C#\CSharpLearn\obj\Debug\netcoreapp3.1\CSharpLearn.AssemblyInfo.cs
+D:\SUGAR\笔记\C#\CSharpLearn\obj\Debug\netcoreapp3.1\CSharpLearn.csproj.CoreCompileInputs.cache
+D:\SUGAR\笔记\C#\CSharpLearn\obj\Debug\netcoreapp3.1\CSharpLearn.dll
+D:\SUGAR\笔记\C#\CSharpLearn\obj\Debug\netcoreapp3.1\CSharpLearn.pdb
+D:\SUGAR\笔记\C#\CSharpLearn\obj\Debug\netcoreapp3.1\CSharpLearn.genruntimeconfig.cache

@@ -1,0 +1,12 @@
+D:\SUGAR\笔记\C#\demo04_资源清理\bin\Debug\netcoreapp3.1\demo04_资源清理.exe
+D:\SUGAR\笔记\C#\demo04_资源清理\bin\Debug\netcoreapp3.1\demo04_资源清理.deps.json
+D:\SUGAR\笔记\C#\demo04_资源清理\bin\Debug\netcoreapp3.1\demo04_资源清理.runtimeconfig.json
+D:\SUGAR\笔记\C#\demo04_资源清理\bin\Debug\netcoreapp3.1\demo04_资源清理.runtimeconfig.dev.json
+D:\SUGAR\笔记\C#\demo04_资源清理\bin\Debug\netcoreapp3.1\demo04_资源清理.dll
+D:\SUGAR\笔记\C#\demo04_资源清理\bin\Debug\netcoreapp3.1\demo04_资源清理.pdb
+D:\SUGAR\笔记\C#\demo04_资源清理\obj\Debug\netcoreapp3.1\demo04_资源清理.AssemblyInfoInputs.cache
+D:\SUGAR\笔记\C#\demo04_资源清理\obj\Debug\netcoreapp3.1\demo04_资源清理.AssemblyInfo.cs
+D:\SUGAR\笔记\C#\demo04_资源清理\obj\Debug\netcoreapp3.1\demo04_资源清理.csproj.CoreCompileInputs.cache
+D:\SUGAR\笔记\C#\demo04_资源清理\obj\Debug\netcoreapp3.1\demo04_资源清理.dll
+D:\SUGAR\笔记\C#\demo04_资源清理\obj\Debug\netcoreapp3.1\demo04_资源清理.pdb
+D:\SUGAR\笔记\C#\demo04_资源清理\obj\Debug\netcoreapp3.1\demo04_资源清理.genruntimeconfig.cache

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "demo12_用多播委托改deno11/1.0.0": {
+        "runtime": {
+          "demo12_用多播委托改deno11.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "demo12_用多播委托改deno11/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

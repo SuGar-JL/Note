@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "demo01_数组-Array类/1.0.0": {
+        "runtime": {
+          "demo01_数组-Array类.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "demo01_数组-Array类/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

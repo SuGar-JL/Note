@@ -1,0 +1,13 @@
+D:\SUGAR\笔记\C#\demo09_var类型\bin\Debug\netcoreapp3.1\demo09_var类型.exe
+D:\SUGAR\笔记\C#\demo09_var类型\bin\Debug\netcoreapp3.1\demo09_var类型.deps.json
+D:\SUGAR\笔记\C#\demo09_var类型\bin\Debug\netcoreapp3.1\demo09_var类型.runtimeconfig.json
+D:\SUGAR\笔记\C#\demo09_var类型\bin\Debug\netcoreapp3.1\demo09_var类型.runtimeconfig.dev.json
+D:\SUGAR\笔记\C#\demo09_var类型\bin\Debug\netcoreapp3.1\demo09_var类型.dll
+D:\SUGAR\笔记\C#\demo09_var类型\bin\Debug\netcoreapp3.1\demo09_var类型.pdb
+D:\SUGAR\笔记\C#\demo09_var类型\obj\Debug\netcoreapp3.1\demo09_var类型.csprojAssemblyReference.cache
+D:\SUGAR\笔记\C#\demo09_var类型\obj\Debug\netcoreapp3.1\demo09_var类型.AssemblyInfoInputs.cache
+D:\SUGAR\笔记\C#\demo09_var类型\obj\Debug\netcoreapp3.1\demo09_var类型.AssemblyInfo.cs
+D:\SUGAR\笔记\C#\demo09_var类型\obj\Debug\netcoreapp3.1\demo09_var类型.csproj.CoreCompileInputs.cache
+D:\SUGAR\笔记\C#\demo09_var类型\obj\Debug\netcoreapp3.1\demo09_var类型.dll
+D:\SUGAR\笔记\C#\demo09_var类型\obj\Debug\netcoreapp3.1\demo09_var类型.pdb
+D:\SUGAR\笔记\C#\demo09_var类型\obj\Debug\netcoreapp3.1\demo09_var类型.genruntimeconfig.cache

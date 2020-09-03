@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "demo07_委托的多播/1.0.0": {
+        "runtime": {
+          "demo07_委托的多播.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "demo07_委托的多播/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
