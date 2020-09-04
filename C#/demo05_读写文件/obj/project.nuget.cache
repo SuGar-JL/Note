@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "np23Ddg0OWvQcJKGP21CIZ1TXcXXrSg7RNMhQoQiKMu9x0viUwc7GVbBsYgAPof/d71oLjHaSeJHpTGm4awxdQ==",
+  "dgSpecHash": "MB1IjbgIRc4e+jWaWXB/nT6ahMkbY+ZAaG5rD35yiMCVsj8ZOGMa0AZEYatyFWGCnUUs+JPYh4UyCR0nVTCgzw==",
   "success": true,
-  "projectFilePath": "D:\\学习\\笔记\\Note\\C#\\demo05_读写文件\\demo05_读写文件.csproj",
+  "projectFilePath": "D:\\SUGAR\\笔记\\C#\\demo05_读写文件\\demo05_读写文件.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

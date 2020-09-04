@@ -1,0 +1,14 @@
+D:\SUGAR\笔记\WinForm\设计窗体\bin\Debug\设计窗体.exe.config
+D:\SUGAR\笔记\WinForm\设计窗体\bin\Debug\设计窗体.exe
+D:\SUGAR\笔记\WinForm\设计窗体\bin\Debug\设计窗体.pdb
+D:\SUGAR\笔记\WinForm\设计窗体\bin\Debug\SunnyUI.Pluse.dll
+D:\SUGAR\笔记\WinForm\设计窗体\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll
+D:\SUGAR\笔记\WinForm\设计窗体\obj\Debug\DataCollect.csprojAssemblyReference.cache
+D:\SUGAR\笔记\WinForm\设计窗体\obj\Debug\DataCollect.F_DeviceManage.resources
+D:\SUGAR\笔记\WinForm\设计窗体\obj\Debug\DataCollect.F_main.resources
+D:\SUGAR\笔记\WinForm\设计窗体\obj\Debug\设计窗体.Properties.Resources.resources
+D:\SUGAR\笔记\WinForm\设计窗体\obj\Debug\DataCollect.csproj.GenerateResource.cache
+D:\SUGAR\笔记\WinForm\设计窗体\obj\Debug\DataCollect.csproj.CoreCompileInputs.cache
+D:\SUGAR\笔记\WinForm\设计窗体\obj\Debug\DataCollect.csproj.CopyComplete
+D:\SUGAR\笔记\WinForm\设计窗体\obj\Debug\设计窗体.exe
+D:\SUGAR\笔记\WinForm\设计窗体\obj\Debug\设计窗体.pdb
