@@ -278,6 +278,29 @@ private < internal/protected < protected internal < public
 
 ​	https://www.jianshu.com/p/4775095f2902
 
+## 12.string.Empty、"" 与 null
+
+- string.Empty不分配内存空间，""分配空的内存空间，null无指向
+
+- 为了跨平台用string.Empty
+
+- 大多数情况下 "" 和 string.Empty 可以互换使用
+
+  ```C#
+  string s = "";
+  string s2 = string.Empty;
+  if (s == string.Empty) {
+  　　//
+  }
+  //if语句成立
+  ```
+
+- 判定为空字符串的几种写法，按照性能从高到低的顺序是：s.Length == 0 优于 s == string.Empty 优于 s == ""
+
+## 13.Invoke用法 
+
+​	https://www.cnblogs.com/lsgsanxiao/p/5523282.html
+
 # 学习C#
 
 ## 一、数据类型
