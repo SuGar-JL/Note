@@ -11,3 +11,16 @@ D:\SUGAR\笔记\C#\demo12_用多播委托改deno11\obj\Debug\netcoreapp3.1\demo1
 D:\SUGAR\笔记\C#\demo12_用多播委托改deno11\obj\Debug\netcoreapp3.1\demo12_用多播委托改deno11.dll
 D:\SUGAR\笔记\C#\demo12_用多播委托改deno11\obj\Debug\netcoreapp3.1\demo12_用多播委托改deno11.pdb
 D:\SUGAR\笔记\C#\demo12_用多播委托改deno11\obj\Debug\netcoreapp3.1\demo12_用多播委托改deno11.genruntimeconfig.cache
+D:\学习\笔记\Note\C#\demo12_用多播委托改deno11\bin\Debug\netcoreapp3.1\demo12_用多播委托改deno11.exe
+D:\学习\笔记\Note\C#\demo12_用多播委托改deno11\bin\Debug\netcoreapp3.1\demo12_用多播委托改deno11.deps.json
+D:\学习\笔记\Note\C#\demo12_用多播委托改deno11\bin\Debug\netcoreapp3.1\demo12_用多播委托改deno11.runtimeconfig.json
+D:\学习\笔记\Note\C#\demo12_用多播委托改deno11\bin\Debug\netcoreapp3.1\demo12_用多播委托改deno11.runtimeconfig.dev.json
+D:\学习\笔记\Note\C#\demo12_用多播委托改deno11\bin\Debug\netcoreapp3.1\demo12_用多播委托改deno11.dll
+D:\学习\笔记\Note\C#\demo12_用多播委托改deno11\bin\Debug\netcoreapp3.1\demo12_用多播委托改deno11.pdb
+D:\学习\笔记\Note\C#\demo12_用多播委托改deno11\obj\Debug\netcoreapp3.1\demo12_用多播委托改deno11.csprojAssemblyReference.cache
+D:\学习\笔记\Note\C#\demo12_用多播委托改deno11\obj\Debug\netcoreapp3.1\demo12_用多播委托改deno11.AssemblyInfoInputs.cache
+D:\学习\笔记\Note\C#\demo12_用多播委托改deno11\obj\Debug\netcoreapp3.1\demo12_用多播委托改deno11.AssemblyInfo.cs
+D:\学习\笔记\Note\C#\demo12_用多播委托改deno11\obj\Debug\netcoreapp3.1\demo12_用多播委托改deno11.csproj.CoreCompileInputs.cache
+D:\学习\笔记\Note\C#\demo12_用多播委托改deno11\obj\Debug\netcoreapp3.1\demo12_用多播委托改deno11.dll
+D:\学习\笔记\Note\C#\demo12_用多播委托改deno11\obj\Debug\netcoreapp3.1\demo12_用多播委托改deno11.pdb
+D:\学习\笔记\Note\C#\demo12_用多播委托改deno11\obj\Debug\netcoreapp3.1\demo12_用多播委托改deno11.genruntimeconfig.cache
