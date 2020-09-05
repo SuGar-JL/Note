@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KcKjQIZcFNgRaNAzI1hntTveCR4jW+Io83AkXB3De3EwtEINQ+RH5Bln44tEGHwFyn/pyXnx6ObZj/ZTneIExQ==",
+  "dgSpecHash": "xdkDIoSfrwXqKJgvcP56YBY4kstALFyW7ozRbAfV6Q9mN0NXKuIrVRGA9zznkRxEuocCHC5P8uZmumTqr8d9kg==",
   "success": true,
-  "projectFilePath": "D:\\学习\\笔记\\Note\\C#\\demo06_委托\\demo06_委托.csproj",
+  "projectFilePath": "D:\\SUGAR\\笔记\\C#\\demo06_委托\\demo06_委托.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

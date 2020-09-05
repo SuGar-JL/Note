@@ -76,6 +76,7 @@ namespace demo12_用多播委托改deno11
             {
                 this.name = n;
             }
+            //声明委托
             //加个event关键字
             //public event Action<NewsPaper> subscribers = null;
             //把发布者名称传递出去
@@ -88,6 +89,7 @@ namespace demo12_用多播委托改deno11
             {
                 //newsPaper.publisherName = this.name;
                 //这是一股脑的处理，没法处理异常
+                //使用委托
                 //subscribers?.Invoke(newsPaper);//Event?.Invoke() 若event不为null，则baiinvoke，这是C#6的新语法du。zhi   ?.称为空值传dao播运算符。
                 
                 //异常处理方法
@@ -119,6 +121,8 @@ namespace demo12_用多播委托改deno11
             var CB = new Company("Cb");
 
             var pA = new Publisher("发布商X");
+
+            //注册委托
             //pA.subscribers = A.SetNewsPaper;//加了event关键字，不能使用+ 和 -
             pA.Subscribers += A.SetNewsPaper;//event关键字有效避免把+= 写成 =
             pA.Subscribers += B.SetNewsPaper;

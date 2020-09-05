@@ -1,0 +1,13 @@
+D:\SUGAR\笔记\C#\demo13_订阅发布模式\bin\Debug\netcoreapp3.1\demo13_订阅发布模式.exe
+D:\SUGAR\笔记\C#\demo13_订阅发布模式\bin\Debug\netcoreapp3.1\demo13_订阅发布模式.deps.json
+D:\SUGAR\笔记\C#\demo13_订阅发布模式\bin\Debug\netcoreapp3.1\demo13_订阅发布模式.runtimeconfig.json
+D:\SUGAR\笔记\C#\demo13_订阅发布模式\bin\Debug\netcoreapp3.1\demo13_订阅发布模式.runtimeconfig.dev.json
+D:\SUGAR\笔记\C#\demo13_订阅发布模式\bin\Debug\netcoreapp3.1\demo13_订阅发布模式.dll
+D:\SUGAR\笔记\C#\demo13_订阅发布模式\bin\Debug\netcoreapp3.1\demo13_订阅发布模式.pdb
+D:\SUGAR\笔记\C#\demo13_订阅发布模式\obj\Debug\netcoreapp3.1\demo13_订阅发布模式.AssemblyInfoInputs.cache
+D:\SUGAR\笔记\C#\demo13_订阅发布模式\obj\Debug\netcoreapp3.1\demo13_订阅发布模式.AssemblyInfo.cs
+D:\SUGAR\笔记\C#\demo13_订阅发布模式\obj\Debug\netcoreapp3.1\demo13_订阅发布模式.csproj.CoreCompileInputs.cache
+D:\SUGAR\笔记\C#\demo13_订阅发布模式\obj\Debug\netcoreapp3.1\demo13_订阅发布模式.dll
+D:\SUGAR\笔记\C#\demo13_订阅发布模式\obj\Debug\netcoreapp3.1\demo13_订阅发布模式.pdb
+D:\SUGAR\笔记\C#\demo13_订阅发布模式\obj\Debug\netcoreapp3.1\demo13_订阅发布模式.genruntimeconfig.cache
+D:\SUGAR\笔记\C#\demo13_订阅发布模式\obj\Debug\netcoreapp3.1\demo13_订阅发布模式.csprojAssemblyReference.cache
