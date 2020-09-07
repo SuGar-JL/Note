@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "demo15_基于demo14_扩展方法/1.0.0": {
+        "runtime": {
+          "demo15_基于demo14_扩展方法.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "demo15_基于demo14_扩展方法/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/d+8iC5w2PAfE4qhZMLv5xgDBwtbgCFuNrtUoKQBGJmh2ajp28PE7MUEvFJ29GK9LkSO3jINHJqgG6nGOHUo6Q==",
+  "dgSpecHash": "MYMHY6R/S+pHdssZWM46jj+RwTpc7MFlCKE9ks9WNRmOuSIHF1X8g7A2m3GHpDqLVKWmu77TmYsPwONuKXq+fA==",
   "success": true,
-  "projectFilePath": "D:\\SUGAR\\笔记\\C#\\demo03_泛型约束\\demo03_泛型约束.csproj",
+  "projectFilePath": "D:\\学习\\笔记\\Note\\C#\\demo03_泛型约束\\demo03_泛型约束.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

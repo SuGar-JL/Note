@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xZyYi7rqXlnGxp8vE2DY+PtuRflH2kVyTI/+v/J79niKjmBomAHaaO7tsfry5DN6HeTpeYnyS/NN9XmyExmw8A==",
+  "dgSpecHash": "2gLOPfAIUzt8MS/G2COwP9viVQGgEfldW/UzAovSJi/yye+QSNjm+8lg+ob9uhfd+FWCuVyYlWcsh43GYwzcdg==",
   "success": true,
-  "projectFilePath": "D:\\SUGAR\\笔记\\C#\\demo07_委托的多播\\demo07_委托的多播.csproj",
+  "projectFilePath": "D:\\学习\\笔记\\Note\\C#\\demo07_委托的多播\\demo07_委托的多播.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,0 +1,13 @@
+D:\学习\笔记\Note\C#\demo20_序列化\bin\Debug\netcoreapp3.1\demo20_序列化.exe
+D:\学习\笔记\Note\C#\demo20_序列化\bin\Debug\netcoreapp3.1\demo20_序列化.deps.json
+D:\学习\笔记\Note\C#\demo20_序列化\bin\Debug\netcoreapp3.1\demo20_序列化.runtimeconfig.json
+D:\学习\笔记\Note\C#\demo20_序列化\bin\Debug\netcoreapp3.1\demo20_序列化.runtimeconfig.dev.json
+D:\学习\笔记\Note\C#\demo20_序列化\bin\Debug\netcoreapp3.1\demo20_序列化.dll
+D:\学习\笔记\Note\C#\demo20_序列化\bin\Debug\netcoreapp3.1\demo20_序列化.pdb
+D:\学习\笔记\Note\C#\demo20_序列化\obj\Debug\netcoreapp3.1\demo20_序列化.AssemblyInfoInputs.cache
+D:\学习\笔记\Note\C#\demo20_序列化\obj\Debug\netcoreapp3.1\demo20_序列化.AssemblyInfo.cs
+D:\学习\笔记\Note\C#\demo20_序列化\obj\Debug\netcoreapp3.1\demo20_序列化.csproj.CoreCompileInputs.cache
+D:\学习\笔记\Note\C#\demo20_序列化\obj\Debug\netcoreapp3.1\demo20_序列化.dll
+D:\学习\笔记\Note\C#\demo20_序列化\obj\Debug\netcoreapp3.1\demo20_序列化.pdb
+D:\学习\笔记\Note\C#\demo20_序列化\obj\Debug\netcoreapp3.1\demo20_序列化.genruntimeconfig.cache
+D:\学习\笔记\Note\C#\demo20_序列化\obj\Debug\netcoreapp3.1\demo20_序列化.csprojAssemblyReference.cache

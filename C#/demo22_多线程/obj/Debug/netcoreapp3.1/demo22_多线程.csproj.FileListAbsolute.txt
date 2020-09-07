@@ -1,0 +1,13 @@
+D:\学习\笔记\Note\C#\demo22_多线程\bin\Debug\netcoreapp3.1\demo22_多线程.exe
+D:\学习\笔记\Note\C#\demo22_多线程\bin\Debug\netcoreapp3.1\demo22_多线程.deps.json
+D:\学习\笔记\Note\C#\demo22_多线程\bin\Debug\netcoreapp3.1\demo22_多线程.runtimeconfig.json
+D:\学习\笔记\Note\C#\demo22_多线程\bin\Debug\netcoreapp3.1\demo22_多线程.runtimeconfig.dev.json
+D:\学习\笔记\Note\C#\demo22_多线程\bin\Debug\netcoreapp3.1\demo22_多线程.dll
+D:\学习\笔记\Note\C#\demo22_多线程\bin\Debug\netcoreapp3.1\demo22_多线程.pdb
+D:\学习\笔记\Note\C#\demo22_多线程\obj\Debug\netcoreapp3.1\demo22_多线程.csprojAssemblyReference.cache
+D:\学习\笔记\Note\C#\demo22_多线程\obj\Debug\netcoreapp3.1\demo22_多线程.AssemblyInfoInputs.cache
+D:\学习\笔记\Note\C#\demo22_多线程\obj\Debug\netcoreapp3.1\demo22_多线程.AssemblyInfo.cs
+D:\学习\笔记\Note\C#\demo22_多线程\obj\Debug\netcoreapp3.1\demo22_多线程.csproj.CoreCompileInputs.cache
+D:\学习\笔记\Note\C#\demo22_多线程\obj\Debug\netcoreapp3.1\demo22_多线程.dll
+D:\学习\笔记\Note\C#\demo22_多线程\obj\Debug\netcoreapp3.1\demo22_多线程.pdb
+D:\学习\笔记\Note\C#\demo22_多线程\obj\Debug\netcoreapp3.1\demo22_多线程.genruntimeconfig.cache

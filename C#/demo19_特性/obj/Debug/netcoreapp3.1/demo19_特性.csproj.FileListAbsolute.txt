@@ -1,0 +1,13 @@
+D:\学习\笔记\Note\C#\demo19_特性\bin\Debug\netcoreapp3.1\demo19_特性.exe
+D:\学习\笔记\Note\C#\demo19_特性\bin\Debug\netcoreapp3.1\demo19_特性.deps.json
+D:\学习\笔记\Note\C#\demo19_特性\bin\Debug\netcoreapp3.1\demo19_特性.runtimeconfig.json
+D:\学习\笔记\Note\C#\demo19_特性\bin\Debug\netcoreapp3.1\demo19_特性.runtimeconfig.dev.json
+D:\学习\笔记\Note\C#\demo19_特性\bin\Debug\netcoreapp3.1\demo19_特性.dll
+D:\学习\笔记\Note\C#\demo19_特性\bin\Debug\netcoreapp3.1\demo19_特性.pdb
+D:\学习\笔记\Note\C#\demo19_特性\obj\Debug\netcoreapp3.1\demo19_特性.AssemblyInfoInputs.cache
+D:\学习\笔记\Note\C#\demo19_特性\obj\Debug\netcoreapp3.1\demo19_特性.AssemblyInfo.cs
+D:\学习\笔记\Note\C#\demo19_特性\obj\Debug\netcoreapp3.1\demo19_特性.csproj.CoreCompileInputs.cache
+D:\学习\笔记\Note\C#\demo19_特性\obj\Debug\netcoreapp3.1\demo19_特性.dll
+D:\学习\笔记\Note\C#\demo19_特性\obj\Debug\netcoreapp3.1\demo19_特性.pdb
+D:\学习\笔记\Note\C#\demo19_特性\obj\Debug\netcoreapp3.1\demo19_特性.genruntimeconfig.cache
+D:\学习\笔记\Note\C#\demo19_特性\obj\Debug\netcoreapp3.1\demo19_特性.csprojAssemblyReference.cache

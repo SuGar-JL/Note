@@ -1,0 +1,13 @@
+D:\学习\笔记\Note\C#\demo18_反射\bin\Debug\netcoreapp3.1\demo18_反射.exe
+D:\学习\笔记\Note\C#\demo18_反射\bin\Debug\netcoreapp3.1\demo18_反射.deps.json
+D:\学习\笔记\Note\C#\demo18_反射\bin\Debug\netcoreapp3.1\demo18_反射.runtimeconfig.json
+D:\学习\笔记\Note\C#\demo18_反射\bin\Debug\netcoreapp3.1\demo18_反射.runtimeconfig.dev.json
+D:\学习\笔记\Note\C#\demo18_反射\bin\Debug\netcoreapp3.1\demo18_反射.dll
+D:\学习\笔记\Note\C#\demo18_反射\bin\Debug\netcoreapp3.1\demo18_反射.pdb
+D:\学习\笔记\Note\C#\demo18_反射\obj\Debug\netcoreapp3.1\demo18_反射.csprojAssemblyReference.cache
+D:\学习\笔记\Note\C#\demo18_反射\obj\Debug\netcoreapp3.1\demo18_反射.AssemblyInfoInputs.cache
+D:\学习\笔记\Note\C#\demo18_反射\obj\Debug\netcoreapp3.1\demo18_反射.AssemblyInfo.cs
+D:\学习\笔记\Note\C#\demo18_反射\obj\Debug\netcoreapp3.1\demo18_反射.csproj.CoreCompileInputs.cache
+D:\学习\笔记\Note\C#\demo18_反射\obj\Debug\netcoreapp3.1\demo18_反射.dll
+D:\学习\笔记\Note\C#\demo18_反射\obj\Debug\netcoreapp3.1\demo18_反射.pdb
+D:\学习\笔记\Note\C#\demo18_反射\obj\Debug\netcoreapp3.1\demo18_反射.genruntimeconfig.cache

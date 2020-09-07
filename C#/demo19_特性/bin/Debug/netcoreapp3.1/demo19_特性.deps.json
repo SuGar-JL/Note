@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "demo19_特性/1.0.0": {
+        "runtime": {
+          "demo19_特性.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "demo19_特性/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

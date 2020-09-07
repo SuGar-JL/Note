@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "lWuQoKQoBQYbeAx5W1rdyZZc7Usstu/7ZCFu9YrQmHhbttWIEwKGachw0FS6PkXJ8veqpKTH+Xti4opKfb3veA==",
+  "success": true,
+  "projectFilePath": "D:\\学习\\笔记\\Note\\C#\\demo23_Sqlite\\demo23_Sqlite.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.data.sqlite.core\\3.1.7\\microsoft.data.sqlite.core.3.1.7.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\sqlitepclraw.core\\2.0.2\\sqlitepclraw.core.2.0.2.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\system.data.sqlite.core\\1.0.113.1\\system.data.sqlite.core.1.0.113.1.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\system.memory\\4.5.3\\system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

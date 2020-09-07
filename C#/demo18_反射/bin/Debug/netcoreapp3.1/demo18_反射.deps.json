@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "demo18_反射/1.0.0": {
+        "runtime": {
+          "demo18_反射.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "demo18_反射/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

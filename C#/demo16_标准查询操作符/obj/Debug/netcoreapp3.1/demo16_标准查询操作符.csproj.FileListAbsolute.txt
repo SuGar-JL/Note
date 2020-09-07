@@ -1,0 +1,13 @@
+D:\学习\笔记\Note\C#\demo16_标准查询操作符\bin\Debug\netcoreapp3.1\demo16_标准查询操作符.exe
+D:\学习\笔记\Note\C#\demo16_标准查询操作符\bin\Debug\netcoreapp3.1\demo16_标准查询操作符.deps.json
+D:\学习\笔记\Note\C#\demo16_标准查询操作符\bin\Debug\netcoreapp3.1\demo16_标准查询操作符.runtimeconfig.json
+D:\学习\笔记\Note\C#\demo16_标准查询操作符\bin\Debug\netcoreapp3.1\demo16_标准查询操作符.runtimeconfig.dev.json
+D:\学习\笔记\Note\C#\demo16_标准查询操作符\bin\Debug\netcoreapp3.1\demo16_标准查询操作符.dll
+D:\学习\笔记\Note\C#\demo16_标准查询操作符\bin\Debug\netcoreapp3.1\demo16_标准查询操作符.pdb
+D:\学习\笔记\Note\C#\demo16_标准查询操作符\obj\Debug\netcoreapp3.1\demo16_标准查询操作符.csprojAssemblyReference.cache
+D:\学习\笔记\Note\C#\demo16_标准查询操作符\obj\Debug\netcoreapp3.1\demo16_标准查询操作符.AssemblyInfoInputs.cache
+D:\学习\笔记\Note\C#\demo16_标准查询操作符\obj\Debug\netcoreapp3.1\demo16_标准查询操作符.AssemblyInfo.cs
+D:\学习\笔记\Note\C#\demo16_标准查询操作符\obj\Debug\netcoreapp3.1\demo16_标准查询操作符.csproj.CoreCompileInputs.cache
+D:\学习\笔记\Note\C#\demo16_标准查询操作符\obj\Debug\netcoreapp3.1\demo16_标准查询操作符.dll
+D:\学习\笔记\Note\C#\demo16_标准查询操作符\obj\Debug\netcoreapp3.1\demo16_标准查询操作符.pdb
+D:\学习\笔记\Note\C#\demo16_标准查询操作符\obj\Debug\netcoreapp3.1\demo16_标准查询操作符.genruntimeconfig.cache
