@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Tp8CjiVWn8TEQTS9Z5ONsuMPXwERMWRP7P4m2YMCCyYcWtfyxAZJw/T5B/JOjfbkdHHNWTVkPIwoXcDgeMEGUg==",
+  "dgSpecHash": "5pJxEnuGZPJW0it1pk5GMHM9/EhF45v0El4Uk99STzFU7UEK2EdVSDZI+W9hsbCqQI+2t28k3nVjSx2ur7J69A==",
   "success": true,
-  "projectFilePath": "D:\\学习\\笔记\\Note\\C#\\demo04_资源清理\\demo04_资源清理.csproj",
+  "projectFilePath": "D:\\SUGAR\\笔记\\C#\\demo04_资源清理\\demo04_资源清理.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

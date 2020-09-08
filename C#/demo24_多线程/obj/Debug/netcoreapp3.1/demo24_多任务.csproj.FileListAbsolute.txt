@@ -1,0 +1,13 @@
+D:\SUGAR\笔记\C#\demo24_多线程\bin\Debug\netcoreapp3.1\demo24_多任务.exe
+D:\SUGAR\笔记\C#\demo24_多线程\bin\Debug\netcoreapp3.1\demo24_多任务.deps.json
+D:\SUGAR\笔记\C#\demo24_多线程\bin\Debug\netcoreapp3.1\demo24_多任务.runtimeconfig.json
+D:\SUGAR\笔记\C#\demo24_多线程\bin\Debug\netcoreapp3.1\demo24_多任务.runtimeconfig.dev.json
+D:\SUGAR\笔记\C#\demo24_多线程\bin\Debug\netcoreapp3.1\demo24_多任务.dll
+D:\SUGAR\笔记\C#\demo24_多线程\bin\Debug\netcoreapp3.1\demo24_多任务.pdb
+D:\SUGAR\笔记\C#\demo24_多线程\obj\Debug\netcoreapp3.1\demo24_多任务.csprojAssemblyReference.cache
+D:\SUGAR\笔记\C#\demo24_多线程\obj\Debug\netcoreapp3.1\demo24_多任务.AssemblyInfoInputs.cache
+D:\SUGAR\笔记\C#\demo24_多线程\obj\Debug\netcoreapp3.1\demo24_多任务.AssemblyInfo.cs
+D:\SUGAR\笔记\C#\demo24_多线程\obj\Debug\netcoreapp3.1\demo24_多任务.csproj.CoreCompileInputs.cache
+D:\SUGAR\笔记\C#\demo24_多线程\obj\Debug\netcoreapp3.1\demo24_多任务.dll
+D:\SUGAR\笔记\C#\demo24_多线程\obj\Debug\netcoreapp3.1\demo24_多任务.pdb
+D:\SUGAR\笔记\C#\demo24_多线程\obj\Debug\netcoreapp3.1\demo24_多任务.genruntimeconfig.cache

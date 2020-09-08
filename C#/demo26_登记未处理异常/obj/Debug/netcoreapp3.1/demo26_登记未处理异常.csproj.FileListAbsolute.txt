@@ -1,0 +1,12 @@
+D:\SUGAR\笔记\C#\demo26_登记未处理异常\bin\Debug\netcoreapp3.1\demo26_登记未处理异常.exe
+D:\SUGAR\笔记\C#\demo26_登记未处理异常\bin\Debug\netcoreapp3.1\demo26_登记未处理异常.deps.json
+D:\SUGAR\笔记\C#\demo26_登记未处理异常\bin\Debug\netcoreapp3.1\demo26_登记未处理异常.runtimeconfig.json
+D:\SUGAR\笔记\C#\demo26_登记未处理异常\bin\Debug\netcoreapp3.1\demo26_登记未处理异常.runtimeconfig.dev.json
+D:\SUGAR\笔记\C#\demo26_登记未处理异常\bin\Debug\netcoreapp3.1\demo26_登记未处理异常.dll
+D:\SUGAR\笔记\C#\demo26_登记未处理异常\bin\Debug\netcoreapp3.1\demo26_登记未处理异常.pdb
+D:\SUGAR\笔记\C#\demo26_登记未处理异常\obj\Debug\netcoreapp3.1\demo26_登记未处理异常.AssemblyInfoInputs.cache
+D:\SUGAR\笔记\C#\demo26_登记未处理异常\obj\Debug\netcoreapp3.1\demo26_登记未处理异常.AssemblyInfo.cs
+D:\SUGAR\笔记\C#\demo26_登记未处理异常\obj\Debug\netcoreapp3.1\demo26_登记未处理异常.csproj.CoreCompileInputs.cache
+D:\SUGAR\笔记\C#\demo26_登记未处理异常\obj\Debug\netcoreapp3.1\demo26_登记未处理异常.dll
+D:\SUGAR\笔记\C#\demo26_登记未处理异常\obj\Debug\netcoreapp3.1\demo26_登记未处理异常.pdb
+D:\SUGAR\笔记\C#\demo26_登记未处理异常\obj\Debug\netcoreapp3.1\demo26_登记未处理异常.genruntimeconfig.cache

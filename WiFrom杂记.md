@@ -72,8 +72,8 @@ namespace 设计窗体
         private void Form1_Load(object sender, EventArgs e)
         {
             Form2 f_DeviceManage  = new Form2();
-            Form2.Show(dockPanel1);//让Form2在dockPanel1中显示
-            Form2.DockTo(dockPanel1, DockStyle.Left);//让Form2显示在dockPanel1左边
+            f_DeviceManage.Show(dockPanel1);//让Form2在dockPanel1中显示
+            f_DeviceManage.DockTo(dockPanel1, DockStyle.Left);//让Form2显示在dockPanel1左边
         }
     }
 }

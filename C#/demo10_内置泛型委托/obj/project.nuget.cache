@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XZM6/XJhtyRxlhmv6nn4dIohuzfXBcrlDw12wAVEDq68dHFM7AUUpHY7vrSLOm5p5CakVONc4tpA6JvlAY2ThA==",
+  "dgSpecHash": "8TIgmCtLHP00VGueBg83CfgAB97jscCA4NAWoKMN3oOD20a83C8iRsnJP3wlhDuvYXBU56yaYPwjsd7qP6n/GA==",
   "success": true,
-  "projectFilePath": "D:\\学习\\笔记\\Note\\C#\\demo10_内置泛型委托\\demo10_内置泛型委托.csproj",
+  "projectFilePath": "D:\\SUGAR\\笔记\\C#\\demo10_内置泛型委托\\demo10_内置泛型委托.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

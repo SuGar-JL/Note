@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\学习\\笔记\\Note\\C#\\demo08_委托用法\\demo08_委托用法.csproj": {}
+    "D:\\SUGAR\\笔记\\C#\\demo08_委托用法\\demo08_委托用法.csproj": {}
   },
   "projects": {
-    "D:\\学习\\笔记\\Note\\C#\\demo08_委托用法\\demo08_委托用法.csproj": {
+    "D:\\SUGAR\\笔记\\C#\\demo08_委托用法\\demo08_委托用法.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\学习\\笔记\\Note\\C#\\demo08_委托用法\\demo08_委托用法.csproj",
+        "projectUniqueName": "D:\\SUGAR\\笔记\\C#\\demo08_委托用法\\demo08_委托用法.csproj",
         "projectName": "demo08_委托用法",
-        "projectPath": "D:\\学习\\笔记\\Note\\C#\\demo08_委托用法\\demo08_委托用法.csproj",
-        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
-        "outputPath": "D:\\学习\\笔记\\Note\\C#\\demo08_委托用法\\obj\\",
+        "projectPath": "D:\\SUGAR\\笔记\\C#\\demo08_委托用法\\demo08_委托用法.csproj",
+        "packagesPath": "C:\\Users\\hp\\.nuget\\packages\\",
+        "outputPath": "D:\\SUGAR\\笔记\\C#\\demo08_委托用法\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hp\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
