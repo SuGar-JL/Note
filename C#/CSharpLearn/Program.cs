@@ -1,44 +1,106 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
+using System.Net;
+using System.Runtime.ExceptionServices;
 using System.Threading.Tasks;
 
 namespace CSharpLearn
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            bool parentTaskFaulted = false;
-            Task task = new Task(() =>
+            string url = "http://www.IntelliTect.com";
+            if (args.Length > 0)
             {
-                Console.WriteLine("先驱任务要抛异常");
-                throw new InvalidOperationException();
-            });
-            Task continuationTask = task.ContinueWith(
-                (antecedentTask) =>
-                {
-                    parentTaskFaulted =
-                        antecedentTask.IsFaulted;
-                    Console.WriteLine("延续任务执行");
-                }, TaskContinuationOptions.OnlyOnFaulted);
-            task.Start();
-            continuationTask.Wait();
-            if (!parentTaskFaulted)
-            {
-                Console.WriteLine("抛异常1");
-                throw new Exception("Parent task should be faulted");
-            }
-            if (!task.IsFaulted)
-            {
-                Console.WriteLine("抛异常2");
-                throw new Exception("Task should be faulted");
+                url = args[0];
             }
 
-            task.Exception.Handle(eachException =>
+            Console.Write(url);
+
+            Task task = WriteWebRequestSizeAsync(url);
+
+            try
             {
-                Console.WriteLine(
-                    $"ERROR: { eachException.Message }");
-                return true;
+                while (!task.Wait(100))
+                {
+                    Console.Write(".");
+                }
+            }
+            catch (AggregateException exception)
+            {
+                exception = exception.Flatten();
+                try
+                {
+                    exception.Handle(innerException =>
+                    {
+                        // Rethrowing rather than using
+                        // if condition on the type
+                        ExceptionDispatchInfo.Capture(
+                                              exception.InnerException)
+                                              .Throw();
+                        return true;
+                    });
+                }
+                catch (WebException)
+                {
+                    // ...
+                }
+                catch (IOException)
+                {
+                    // ...
+                }
+                catch (NotSupportedException)
+                {
+                    // ...
+                }
+            }
+        }
+
+
+        private static Task WriteWebRequestSizeAsync(
+            string url)
+        {
+            StreamReader reader = null;
+            WebRequest webRequest =
+                 WebRequest.Create(url);
+
+            Task task = webRequest.GetResponseAsync()
+            .ContinueWith(antecedent =>
+            {
+                WebResponse response =
+                   antecedent.Result;
+
+                reader =
+                    new StreamReader(
+                        response.GetResponseStream());
+                return reader.ReadToEndAsync();//返回值类型为Task<string>
+            })
+            .Unwrap()//返回值类型为来自Task<string>的string
+            .ContinueWith(antecedent =>
+            {
+                if (reader != null)
+                    reader.Dispose();
+                string text = antecedent.Result;//因为有Unwrap，才能直接赋值给text
+                Console.WriteLine(FormatBytes(text.Length));
             });
+
+            return task;
+        }
+
+        static public string FormatBytes(long bytes)
+        {
+            string[] magnitudes =
+                new string[] { "GB", "MB", "KB", "Bytes" };
+            long max =
+                (long)Math.Pow(1024, magnitudes.Length);
+
+            return string.Format("{1:##.##} {0}",
+                magnitudes.FirstOrDefault(
+                    magnitude =>
+                        bytes > (max /= 1024)) ?? "0 Bytes",
+                    (decimal)bytes / (decimal)max).Trim();
         }
     }
 }

@@ -246,6 +246,7 @@ public int Id{private get; set;}
 | Min     | 返回两个数中较小数的值                                 |
 | Sqrt    | 返回指定数字的平方根                                   |
 | Round   | 返回四舍五入后的值                                     |
+| Pow     | 求次幂                                                 |
 
 ### 6.Random 类：
 

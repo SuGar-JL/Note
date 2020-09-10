@@ -44,11 +44,10 @@ namespace demo27_取消任务
                 //PiCalculator类没写=>计算PI的下一位
                 //batchSize整数位数
                 //(i++) * batchSize小数位数
-                piSection = PiCalculator.Calculate(
-                    batchSize, (i++) * batchSize);
+                //piSection = PiCalculator.Calculate(
+                //    batchSize, (i++) * batchSize);
                 Console.Write(piSection);
             }
         }
-    }
     }
 }
